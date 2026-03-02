@@ -1,0 +1,122 @@
+.experienceContainer {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.experienceBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    background: rgba(108, 99, 255, 0.08);
+    color: var(--primary-start);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.experienceContent h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.experienceLocation,
+.experiencePeriod {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: var(--text-body);
+}
+
+.experienceLocation i,
+.experiencePeriod i {
+    color: var(--primary-start);
+    margin-right: 8px;
+    width: 16px;
+}
+
+.experienceDescription {
+    margin-top: 16px;
+    margin-bottom: 24px;
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.experienceHighlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.experienceHighlights li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-heading);
+}
+
+.experienceHighlights i {
+    color: var(--primary-start);
+    font-size: 0.85rem;
+}
+
+.experienceStats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.statCard {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: 32px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all var(--transition-base);
+}
+
+.statCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.statNumber {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+}
+
+.statLabel {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-body);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .experienceContainer {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .experienceHighlights {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .experienceStats {
+        grid-template-columns: 1fr 1fr;
+    }
+}

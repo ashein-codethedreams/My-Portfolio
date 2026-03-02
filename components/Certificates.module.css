@@ -1,0 +1,79 @@
+.certificatesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.certificateCard {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all var(--transition-base);
+    display: flex;
+    gap: 20px;
+}
+
+.certificateCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.certificateIcon {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: var(--radius-md);
+    background: var(--primary-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    font-size: 1.4rem;
+}
+
+.certificateContent h3 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.certificateIssuer {
+    font-size: 0.875rem;
+    color: var(--primary-start);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.certificateDate {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.certificateDate i {
+    margin-right: 4px;
+}
+
+.certificateDescription {
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .certificatesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .certificatesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificateCard {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
