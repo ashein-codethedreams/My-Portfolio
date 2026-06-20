@@ -53,7 +53,7 @@ export default function Hero() {
                         >
                             <i className="fas fa-paper-plane"></i> Get In Touch
                         </a>
-                        <a href="#" className="btn btn-outline">
+                        <a href="./assets/Resume_AyeMyatMon.pdf" className="btn btn-outline">
                             <i className="fas fa-download"></i> Download CV
                         </a>
                     </div>
