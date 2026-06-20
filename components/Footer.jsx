@@ -54,7 +54,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className={styles.footerBottom}>
-                    <p>&copy; {new Date().getFullYear()} John Doe. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Aye Myat Mon. All rights reserved.</p>
                 </div>
             </div>
         </footer>
