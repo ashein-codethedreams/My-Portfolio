@@ -8,9 +8,9 @@ const inter = Inter({
 });
 
 export const metadata = {
-    title: 'John Doe | Frontend Software Developer - Portfolio',
+    title: 'Aye Myat Mon | Frontend Software Developer - Portfolio',
     description:
-        'Portfolio of John Doe, a passionate Frontend Software Developer specializing in React, Next.js, and modern web technologies.',
+        'Portfolio of Aye Myat Mon, a passionate Frontend Software Developer specializing in React, Next.js, and modern web technologies.',
 };
 
 export default function RootLayout({ children }) {

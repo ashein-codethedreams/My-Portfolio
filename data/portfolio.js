@@ -10,14 +10,14 @@ export const navLinks = [
 
 export const heroData = {
     greeting: 'Hello, I\'m',
-    name: 'John Doe',
+    name: 'Aye Myat Mon',
     title: 'Frontend Software Developer',
     description:
         'I craft beautiful, responsive and user-friendly web applications with modern technologies. Passionate about clean code, performance optimization, and creating delightful user experiences.',
     socials: [
-        { href: 'https://github.com', icon: 'fab fa-github', label: 'GitHub' },
-        { href: 'https://linkedin.com', icon: 'fab fa-linkedin-in', label: 'LinkedIn' },
-        { href: 'mailto:john@example.com', icon: 'fas fa-envelope', label: 'Email' },
+        { href: 'https://github.com/ashein-codethedreams', icon: 'fab fa-github', label: 'GitHub' },
+        { href: 'https://www.linkedin.com/in/aye-myat-mon-7a9b65214/', icon: 'fab fa-linkedin-in', label: 'LinkedIn' },
+        { href: 'mailto:heroglasses155@gmail.com', icon: 'fas fa-envelope', label: 'Email' },
     ],
     image: '/images/hero-illustration.png',
 };
@@ -48,9 +48,9 @@ export const skillCategories = [
         title: 'Languages',
         skills: [
             { name: 'JavaScript', percent: 92 },
-            { name: 'TypeScript', percent: 88 },
+            { name: 'TypeScript', percent: 70 },
             { name: 'HTML5', percent: 95 },
-            { name: 'CSS3', percent: 90 },
+            { name: 'Java', percent: 90 },
             { name: 'Python', percent: 70 },
         ],
     },
@@ -100,11 +100,11 @@ export const projects = [
 export const certificates = [
     {
         icon: 'fas fa-award',
-        title: 'Meta Frontend Developer',
-        issuer: 'Meta (Coursera)',
-        year: '2024',
+        title: 'React Developer',
+        issuer: 'Digital Base',
+        year: '2023',
         description:
-            'Professional certificate covering React, responsive design, UX/UI principles, and version control.',
+            'Professional certificate of Completion for Digital Base Internship Program.',
     },
     {
         icon: 'fas fa-certificate',
@@ -116,32 +116,32 @@ export const certificates = [
     },
     {
         icon: 'fas fa-medal',
-        title: 'TypeScript Masterclass',
-        issuer: 'Udemy',
-        year: '2023',
+        title: 'Code Yourself! An Introduction to Programming',
+        issuer: 'Coursera',
+        year: '2020',
         description:
-            'Advanced TypeScript patterns, generics, decorators, and enterprise-level type safety.',
+            'Introduction to programming course authorized by The University of Edinburgh.',
     },
 ];
 
 export const experienceData = {
-    badge: 'International',
-    title: 'Software Development Training',
-    location: 'Silicon Valley, USA',
-    period: '6 months intensive program',
+    badge: 'AOTS',
+    title: 'Specialized Technical Training',
+    location: 'Miyazaki, Japan',
+    period: '4 months intensive program',
     description:
-        'Completed an intensive software development training program at a leading tech hub, gaining hands-on experience with modern development practices, agile methodologies, and collaborative software engineering. Worked alongside international teams on real-world projects using cutting-edge technologies.',
+        'Completed an intensive software development training program at a leading tech hub, gaining hands-on experience with modern development practices, agile methodologies, and collaborative software engineering. Worked alongside japanese teams on projects.',
     highlights: [
-        'Agile & Scrum methodologies',
-        'Full-stack development practices',
+        'Modernization',
+        'Legacy programming languages',
         'CI/CD pipeline management',
         'Cross-cultural team collaboration',
     ],
     stats: [
-        { number: '6', label: 'Months' },
-        { number: '12+', label: 'Projects' },
-        { number: '50+', label: 'Colleagues' },
-        { number: '5', label: 'Countries' },
+        { number: '4', label: 'Months' },
+        { number: '4+', label: 'Languages' },
+        { number: '20+', label: 'Colleagues' },
+        { number: '2', label: 'Countries' },
     ],
 };
 
@@ -149,9 +149,9 @@ export const contactData = {
     intro:
         "I'm always open to discussing new opportunities, creative ideas, or just having a friendly chat.",
     details: [
-        { icon: 'fas fa-envelope', label: 'Email', value: 'john@example.com', href: 'mailto:john@example.com' },
-        { icon: 'fas fa-phone-alt', label: 'Phone', value: '+1 (234) 567-890', href: 'tel:+1234567890' },
-        { icon: 'fas fa-map-marker-alt', label: 'Location', value: 'San Francisco, CA', href: null },
+        { icon: 'fas fa-envelope', label: 'Email', value: 'heroglasses155.com', href: 'mailto:heroglasses155.com' },
+        { icon: 'fas fa-phone-alt', label: 'Phone', value: '+95 9454041324', href: 'tel:+959454041324' },
+        { icon: 'fas fa-map-marker-alt', label: 'Location', value: 'Hlaing, Yangon', href: null },
     ],
 };
 
@@ -165,9 +165,8 @@ export const footerData = {
         { href: '#contact', label: 'Contact' },
     ],
     socials: [
-        { href: 'https://github.com', icon: 'fab fa-github', label: 'GitHub' },
-        { href: 'https://linkedin.com', icon: 'fab fa-linkedin-in', label: 'LinkedIn' },
-        { href: 'https://twitter.com', icon: 'fab fa-twitter', label: 'Twitter' },
-        { href: 'mailto:john@example.com', icon: 'fas fa-envelope', label: 'Email' },
+        { href: 'https://github.com/ashein-codethedreams', icon: 'fab fa-github', label: 'GitHub' },
+        { href: 'https://www.linkedin.com/in/aye-myat-mon-7a9b65214/', icon: 'fab fa-linkedin-in', label: 'LinkedIn' },
+        { href: 'mailto:heroglasses155@gmail.com', icon: 'fas fa-envelope', label: 'Email' },
     ],
 };
