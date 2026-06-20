@@ -67,7 +67,7 @@ export default function Contact() {
                             Available for Work
                         </div>
                     </div>
-                    <form
+                    {/* <form
                         ref={formRef}
                         className={`${styles.contactForm} ${formVisible ? 'reveal revealed' : 'reveal'}`}
                         onSubmit={handleSubmit}
@@ -97,7 +97,7 @@ export default function Contact() {
                         >
                             {getButtonContent()}
                         </button>
-                    </form>
+                    </form> */}
                 </div>
             </div>
         </section>

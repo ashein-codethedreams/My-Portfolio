@@ -1,7 +1,6 @@
 export const navLinks = [
     { href: '#home', label: 'Home' },
     { href: '#about', label: 'About' },
-    { href: '#projects', label: 'Projects' },
     { href: '#skills', label: 'Skills' },
     { href: '#certificates', label: 'Certificates' },
     { href: '#experience', label: 'Experience' },
@@ -67,35 +66,35 @@ export const skillCategories = [
     },
 ];
 
-export const projects = [
-    {
-        image: '/images/project-taskapp.png',
-        title: 'Task Management App',
-        description:
-            'A full-featured kanban-style task manager with drag & drop, real-time collaboration, and responsive design.',
-        tags: ['React', 'TypeScript', 'Redux', 'Node.js'],
-        github: '#',
-        live: '#',
-    },
-    {
-        image: '/images/project-ecommerce.png',
-        title: 'E-Commerce Platform',
-        description:
-            'Modern shopping experience with product filtering, cart management, secure checkout, and admin dashboard.',
-        tags: ['Next.js', 'Stripe', 'Prisma', 'PostgreSQL'],
-        github: '#',
-        live: '#',
-    },
-    {
-        image: '/images/project-weather.png',
-        title: 'Weather Dashboard',
-        description:
-            'Real-time weather forecasting app with interactive maps, location search, and beautiful data visualizations.',
-        tags: ['Vue.js', 'Chart.js', 'OpenWeather API'],
-        github: '#',
-        live: '#',
-    },
-];
+// export const projects = [
+//     {
+//         image: '/images/project-taskapp.png',
+//         title: 'Task Management App',
+//         description:
+//             'A full-featured kanban-style task manager with drag & drop, real-time collaboration, and responsive design.',
+//         tags: ['React', 'TypeScript', 'Redux', 'Node.js'],
+//         github: '#',
+//         live: '#',
+//     },
+//     {
+//         image: '/images/project-ecommerce.png',
+//         title: 'E-Commerce Platform',
+//         description:
+//             'Modern shopping experience with product filtering, cart management, secure checkout, and admin dashboard.',
+//         tags: ['Next.js', 'Stripe', 'Prisma', 'PostgreSQL'],
+//         github: '#',
+//         live: '#',
+//     },
+//     {
+//         image: '/images/project-weather.png',
+//         title: 'Weather Dashboard',
+//         description:
+//             'Real-time weather forecasting app with interactive maps, location search, and beautiful data visualizations.',
+//         tags: ['Vue.js', 'Chart.js', 'OpenWeather API'],
+//         github: '#',
+//         live: '#',
+//     },
+// ];
 
 export const certificates = [
     {
@@ -125,12 +124,12 @@ export const certificates = [
 ];
 
 export const experienceData = {
-    badge: 'AOTS',
+    badge: 'AOTS Japan',
     title: 'Specialized Technical Training',
     location: 'Miyazaki, Japan',
     period: '4 months intensive program',
     description:
-        'Completed an intensive software development training program at a leading tech hub, gaining hands-on experience with modern development practices, agile methodologies, and collaborative software engineering. Worked alongside japanese teams on projects.',
+        'Completed an intensive software development training program at a leading tech hub, gaining hands-on experience, agile methodologies, and collaborative software engineering. Worked alongside japanese teams on projects.',
     highlights: [
         'Modernization',
         'Legacy programming languages',
@@ -149,7 +148,7 @@ export const contactData = {
     intro:
         "I'm always open to discussing new opportunities, creative ideas, or just having a friendly chat.",
     details: [
-        { icon: 'fas fa-envelope', label: 'Email', value: 'heroglasses155.com', href: 'mailto:heroglasses155.com' },
+        { icon: 'fas fa-envelope', label: 'Email', value: 'heroglasses155@gmail.com', href: 'mailto:heroglasses155.com' },
         { icon: 'fas fa-phone-alt', label: 'Phone', value: '+95 9454041324', href: 'tel:+959454041324' },
         { icon: 'fas fa-map-marker-alt', label: 'Location', value: 'Hlaing, Yangon', href: null },
     ],
