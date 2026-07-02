@@ -1,22 +1,17 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import styles from './Hero.module.css';
 import { heroData } from '@/data/portfolio';
-import { useTheme } from '@/hooks/useTheme';
 import { useLanguage } from '@/hooks/useLanguage';
+import CodeMockup from './CodeMockup';
 
 export default function Hero() {
     const [typedText, setTypedText] = useState('');
     const [showCursor, setShowCursor] = useState(true);
-    const { theme, mounted: themeMounted } = useTheme();
     const { lang } = useLanguage();
 
     const t = heroData[lang] ?? heroData.en;
-    const heroImage = themeMounted && theme === 'dark'
-        ? '/images/hero-illustration-dark.png'
-        : heroData.image;
 
     useEffect(() => {
         const text = t.title;
@@ -89,16 +84,7 @@ export default function Hero() {
                     </div>
                 </div>
                 <div className={styles.heroImage}>
-                    <div className={styles.heroImageWrapper}>
-                        <Image
-                            src={heroImage}
-                            alt="Developer workspace illustration"
-                            width={500}
-                            height={500}
-                            priority
-                        />
-                        <div className={styles.heroBlob}></div>
-                    </div>
+                    <CodeMockup />
                 </div>
             </div>
             <div className={styles.heroScrollIndicator}>
