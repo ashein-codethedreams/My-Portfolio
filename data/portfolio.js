@@ -54,7 +54,6 @@ export const heroData = {
 };
 
 export const aboutData = {
-    image: '/images/about-illustration.png',
     sectionHeader: {
         en: { subtitle: 'Get To Know Me', title: 'About Me' },
         ja: { subtitle: '自己紹介', title: '私について' },
