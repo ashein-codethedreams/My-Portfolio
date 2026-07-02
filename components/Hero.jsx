@@ -5,19 +5,24 @@ import Image from 'next/image';
 import styles from './Hero.module.css';
 import { heroData } from '@/data/portfolio';
 import { useTheme } from '@/hooks/useTheme';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export default function Hero() {
     const [typedText, setTypedText] = useState('');
     const [showCursor, setShowCursor] = useState(true);
-    const { theme, mounted } = useTheme();
+    const { theme, mounted: themeMounted } = useTheme();
+    const { lang } = useLanguage();
 
-    const heroImage = mounted && theme === 'dark'
+    const t = heroData[lang] ?? heroData.en;
+    const heroImage = themeMounted && theme === 'dark'
         ? '/images/hero-illustration-dark.png'
         : heroData.image;
 
     useEffect(() => {
-        const text = heroData.title;
+        const text = t.title;
         let i = 0;
+        setTypedText('');
+        setShowCursor(true);
         const timer = setTimeout(() => {
             const typeWriter = setInterval(() => {
                 if (i < text.length) {
@@ -29,9 +34,9 @@ export default function Hero() {
                 }
             }, 60);
             return () => clearInterval(typeWriter);
-        }, 800);
+        }, 300);
         return () => clearTimeout(timer);
-    }, []);
+    }, [lang]); // re-run typewriter when language changes
 
     const handleSmoothScroll = (e, href) => {
         e.preventDefault();
@@ -44,23 +49,23 @@ export default function Hero() {
             <div className={`container ${styles.heroContainer}`}>
                 <div className={styles.heroContent}>
                     <p className={styles.heroGreeting}>
-                        <span className={styles.wave}>👋</span> {heroData.greeting}
+                        <span className={styles.wave}>👋</span> {t.greeting}
                     </p>
                     <h1 className={styles.heroName}>{heroData.name}</h1>
                     <p className={`${styles.heroTitle} ${showCursor ? styles.typing : ''}`}>
                         {typedText}
                     </p>
-                    <p className={styles.heroDescription}>{heroData.description}</p>
+                    <p className={styles.heroDescription}>{t.description}</p>
                     <div className={styles.heroCta}>
                         <a
                             href="#contact"
                             className="btn btn-primary"
                             onClick={(e) => handleSmoothScroll(e, '#contact')}
                         >
-                            <i className="fas fa-paper-plane"></i> Get In Touch
+                            <i className="fas fa-paper-plane"></i> {t.cta.contact}
                         </a>
-                        <a href="./assets/Resume_AyeMyatMon.pdf" className="btn btn-outline">
-                            <i className="fas fa-download"></i> Download CV
+                        <a href={t.cta.cvFile} className="btn btn-outline">
+                            <i className="fas fa-download"></i> {t.cta.cv}
                         </a>
                     </div>
                     <div className={styles.heroSocials}>

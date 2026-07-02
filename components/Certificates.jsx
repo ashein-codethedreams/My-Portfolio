@@ -4,6 +4,7 @@ import styles from './Certificates.module.css';
 import SectionHeader from './SectionHeader';
 import { certificates } from '@/data/portfolio';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { useLanguage } from '@/hooks/useLanguage';
 
 function CertificateCard({ cert }) {
     const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
@@ -26,12 +27,17 @@ function CertificateCard({ cert }) {
 }
 
 export default function Certificates() {
+    const { lang } = useLanguage();
+
+    const list = certificates[lang] ?? certificates.en;
+    const header = certificates.sectionHeader[lang] ?? certificates.sectionHeader.en;
+
     return (
         <section className="section section-even" id="certificates">
             <div className="container">
-                <SectionHeader subtitle="Professional Credentials" title="Certificates & Achievements" />
+                <SectionHeader subtitle={header.subtitle} title={header.title} />
                 <div className={styles.certificatesGrid}>
-                    {certificates.map((cert) => (
+                    {list.map((cert) => (
                         <CertificateCard key={cert.title} cert={cert} />
                     ))}
                 </div>

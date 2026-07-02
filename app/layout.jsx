@@ -1,10 +1,18 @@
-import { Inter } from 'next/font/google';
+import { Inter, Noto_Sans_JP } from 'next/font/google';
 import './globals.css';
+import Providers from './Providers';
 
 const inter = Inter({
     subsets: ['latin'],
     weight: ['300', '400', '500', '600', '700', '800'],
     variable: '--font-inter',
+});
+
+const notoSansJP = Noto_Sans_JP({
+    subsets: ['latin'],
+    weight: ['300', '400', '500', '600', '700', '800'],
+    variable: '--font-noto-jp',
+    preload: false,
 });
 
 export const metadata = {
@@ -22,8 +30,10 @@ export default function RootLayout({ children }) {
                     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 />
             </head>
-            <body className={inter.className}>
-                {children}
+            <body className={`${inter.variable} ${notoSansJP.variable} ${inter.className}`}>
+                <Providers>
+                    {children}
+                </Providers>
             </body>
         </html>
     );

@@ -2,8 +2,13 @@
 
 import styles from './Footer.module.css';
 import { footerData } from '@/data/portfolio';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export default function Footer() {
+    const { lang } = useLanguage();
+
+    const t = footerData[lang] ?? footerData.en;
+
     const handleSmoothScroll = (e, href) => {
         e.preventDefault();
         const target = document.querySelector(href);
@@ -22,12 +27,12 @@ export default function Footer() {
                         >
                             {footerData.brand}
                         </a>
-                        <p>{footerData.tagline}</p>
+                        <p>{t.tagline}</p>
                     </div>
                     <div className={styles.footerLinks}>
-                        <h4>Quick Links</h4>
+                        <h4>{t.quickLinksLabel}</h4>
                         <ul>
-                            {footerData.quickLinks.map((link) => (
+                            {t.quickLinks.map((link) => (
                                 <li key={link.href}>
                                     <a href={link.href} onClick={(e) => handleSmoothScroll(e, link.href)}>
                                         {link.label}
@@ -37,7 +42,7 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div className={styles.footerSocial}>
-                        <h4>Connect</h4>
+                        <h4>{t.connect}</h4>
                         <div className={styles.footerSocialLinks}>
                             {footerData.socials.map((social) => (
                                 <a
@@ -54,7 +59,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className={styles.footerBottom}>
-                    <p>&copy; {new Date().getFullYear()} Aye Myat Mon. All rights reserved.</p>
+                    <p>{t.copyright(new Date().getFullYear())}</p>
                 </div>
             </div>
         </footer>

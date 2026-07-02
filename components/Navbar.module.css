@@ -100,7 +100,49 @@
 .navActions {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+}
+
+/* Language pill toggle */
+.langToggle {
+    display: flex;
+    align-items: center;
+    height: 34px;
+    border-radius: var(--radius-full);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: border-color var(--transition-theme), background var(--transition-theme);
+}
+
+.langSegment {
+    padding: 0 11px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-light);
+    transition: all var(--transition-base);
+    user-select: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+}
+
+.langSegment.active {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-glow);
+}
+
+.langSegment:not(.active):hover {
+    color: var(--primary-start);
 }
 
 .bar {

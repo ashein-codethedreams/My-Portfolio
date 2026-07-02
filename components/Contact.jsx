@@ -5,16 +5,19 @@ import styles from './Contact.module.css';
 import SectionHeader from './SectionHeader';
 import { contactData } from '@/data/portfolio';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export default function Contact() {
     const [infoRef, infoVisible] = useIntersectionObserver({ threshold: 0.1 });
-    const [formRef, formVisible] = useIntersectionObserver({ threshold: 0.1 });
     const [submitState, setSubmitState] = useState('idle');
+    const { lang } = useLanguage();
+
+    const t = contactData[lang] ?? contactData.en;
+    const header = contactData.sectionHeader[lang] ?? contactData.sectionHeader.en;
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmitState('sending');
-
         setTimeout(() => {
             setSubmitState('sent');
             setTimeout(() => {
@@ -24,29 +27,18 @@ export default function Contact() {
         }, 1500);
     };
 
-    const getButtonContent = () => {
-        switch (submitState) {
-            case 'sending':
-                return <><i className="fas fa-spinner fa-spin"></i> Sending...</>;
-            case 'sent':
-                return <><i className="fas fa-check"></i> Message Sent!</>;
-            default:
-                return <><i className="fas fa-paper-plane"></i> Send Message</>;
-        }
-    };
-
     return (
         <section className="section section-even" id="contact">
             <div className="container">
-                <SectionHeader subtitle="Let's Talk" title="Get In Touch" />
+                <SectionHeader subtitle={header.subtitle} title={header.title} />
                 <div className={styles.contactContainer}>
                     <div
                         ref={infoRef}
                         className={`${styles.contactInfo} ${infoVisible ? 'reveal revealed' : 'reveal'}`}
                     >
-                        <p className={styles.contactIntro}>{contactData.intro}</p>
+                        <p className={styles.contactIntro}>{t.intro}</p>
                         <div className={styles.contactDetails}>
-                            {contactData.details.map((item) => (
+                            {t.details.map((item) => (
                                 <div key={item.label} className={styles.contactItem}>
                                     <div className={styles.contactIcon}>
                                         <i className={item.icon}></i>
@@ -64,40 +56,9 @@ export default function Contact() {
                         </div>
                         <div className={styles.availableBadge}>
                             <span className={styles.pulseDot}></span>
-                            Available for Work
+                            {t.availableBadge}
                         </div>
                     </div>
-                    {/* <form
-                        ref={formRef}
-                        className={`${styles.contactForm} ${formVisible ? 'reveal revealed' : 'reveal'}`}
-                        onSubmit={handleSubmit}
-                    >
-                        <div className={styles.formGroup}>
-                            <label htmlFor="name">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" required />
-                        </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="email">Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="john@example.com" required />
-                        </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="message">Your Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="5"
-                                placeholder="Tell me about your project..."
-                                required
-                            ></textarea>
-                        </div>
-                        <button
-                            type="submit"
-                            className={`btn btn-primary btn-full ${submitState === 'sent' ? styles.btnSent : ''}`}
-                            disabled={submitState !== 'idle'}
-                        >
-                            {getButtonContent()}
-                        </button>
-                    </form> */}
                 </div>
             </div>
         </section>

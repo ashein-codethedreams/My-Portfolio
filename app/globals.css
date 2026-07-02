@@ -88,6 +88,23 @@ body {
   transition: var(--transition-theme);
 }
 
+/* Japanese font override */
+[data-lang="ja"] body,
+[data-lang="ja"] h1,
+[data-lang="ja"] h2,
+[data-lang="ja"] h3,
+[data-lang="ja"] h4,
+[data-lang="ja"] p,
+[data-lang="ja"] a,
+[data-lang="ja"] span,
+[data-lang="ja"] li,
+[data-lang="ja"] button,
+[data-lang="ja"] input,
+[data-lang="ja"] textarea {
+  font-family: var(--font-noto-jp), 'Noto Sans JP', sans-serif;
+  line-height: 1.9;
+}
+
 img {
   max-width: 100%;
   height: auto;

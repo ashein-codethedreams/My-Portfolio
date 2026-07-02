@@ -1,19 +1,23 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 const STORAGE_KEY = 'portfolio-theme';
 
-export function useTheme() {
+const ThemeContext = createContext({
+    theme: 'light',
+    toggleTheme: () => {},
+    mounted: false,
+});
+
+export function ThemeProvider({ children }) {
     const [theme, setTheme] = useState('light');
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        // Read saved preference, fall back to system preference
         const saved = localStorage.getItem(STORAGE_KEY);
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const initial = saved ?? (prefersDark ? 'dark' : 'light');
-
         setTheme(initial);
         document.documentElement.setAttribute('data-theme', initial);
         setMounted(true);
@@ -28,5 +32,13 @@ export function useTheme() {
         });
     }, []);
 
-    return { theme, toggleTheme, mounted };
+    return (
+        <ThemeContext.Provider value={{ theme, toggleTheme, mounted }}>
+            {children}
+        </ThemeContext.Provider>
+    );
+}
+
+export function useTheme() {
+    return useContext(ThemeContext);
 }

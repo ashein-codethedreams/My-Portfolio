@@ -4,10 +4,15 @@ import { useRef, useEffect, useState } from 'react';
 import styles from './Skills.module.css';
 import SectionHeader from './SectionHeader';
 import { skillCategories } from '@/data/portfolio';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export default function Skills() {
     const [animated, setAnimated] = useState(false);
     const sectionRef = useRef(null);
+    const { lang } = useLanguage();
+
+    const categories = skillCategories[lang] ?? skillCategories.en;
+    const header = skillCategories.sectionHeader[lang] ?? skillCategories.sectionHeader.en;
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -27,9 +32,9 @@ export default function Skills() {
     return (
         <section className="section section-even" id="skills">
             <div className="container">
-                <SectionHeader subtitle="What I Work With" title="Skills & Expertise" />
+                <SectionHeader subtitle={header.subtitle} title={header.title} />
                 <div className={styles.skillsContainer} ref={sectionRef}>
-                    {skillCategories.map((category) => (
+                    {categories.map((category) => (
                         <div key={category.title} className={styles.skillsCategory}>
                             <h3 className={styles.skillsCategoryTitle}>
                                 <i className={category.icon}></i> {category.title}

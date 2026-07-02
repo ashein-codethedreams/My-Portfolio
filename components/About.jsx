@@ -6,11 +6,15 @@ import SectionHeader from './SectionHeader';
 import { aboutData } from '@/data/portfolio';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { useTheme } from '@/hooks/useTheme';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export default function About() {
     const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
     const { theme, mounted } = useTheme();
+    const { lang } = useLanguage();
 
+    const t = aboutData[lang] ?? aboutData.en;
+    const header = aboutData.sectionHeader[lang] ?? aboutData.sectionHeader.en;
     const aboutImage = mounted && theme === 'dark'
         ? '/images/about-illustration-dark.png'
         : aboutData.image;
@@ -18,7 +22,7 @@ export default function About() {
     return (
         <section className="section" id="about">
             <div className="container">
-                <SectionHeader subtitle="Get To Know Me" title="About Me" />
+                <SectionHeader subtitle={header.subtitle} title={header.title} />
                 <div className={styles.aboutContainer} ref={ref}>
                     <div className={styles.aboutImage}>
                         <div className={styles.aboutImageWrapper}>
@@ -33,7 +37,7 @@ export default function About() {
                         </div>
                     </div>
                     <div className={`${styles.aboutContent} ${isVisible ? 'reveal revealed' : 'reveal'}`}>
-                        {aboutData.paragraphs.map((text, i) => (
+                        {t.paragraphs.map((text, i) => (
                             <p
                                 key={i}
                                 className={styles.aboutText}
@@ -41,7 +45,7 @@ export default function About() {
                             />
                         ))}
                         <div className={styles.expertiseCards}>
-                            {aboutData.expertise.map((item) => (
+                            {t.expertise.map((item) => (
                                 <div key={item.title} className={styles.expertiseCard}>
                                     <div className={styles.expertiseIcon}>
                                         <i className={item.icon}></i>
