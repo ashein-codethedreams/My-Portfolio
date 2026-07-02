@@ -8,8 +8,12 @@
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    transition: all var(--transition-base);
+    border-bottom: 1px solid var(--border-color);
+    transition: all var(--transition-base), background var(--transition-theme), border-color var(--transition-theme);
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(11, 17, 32, 0.92);
 }
 
 .scrolled {
@@ -60,6 +64,45 @@
     z-index: 1001;
 }
 
+.themeToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    color: var(--text-heading);
+    font-size: 1rem;
+    transition: all var(--transition-base), background var(--transition-theme), border-color var(--transition-theme);
+    flex-shrink: 0;
+}
+
+.themeToggle:hover {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    border-color: transparent;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow);
+}
+
+.themeToggleIcon {
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: inline-block;
+}
+
+.themeToggle:hover .themeToggleIcon {
+    transform: rotate(20deg);
+}
+
+.navActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .bar {
     width: 25px;
     height: 2.5px;
@@ -95,7 +138,7 @@
         background: var(--bg-primary);
         padding: 100px 32px 40px;
         box-shadow: var(--shadow-lg);
-        transition: right var(--transition-base);
+        transition: right var(--transition-base), background var(--transition-theme);
         gap: 4px;
     }
 

@@ -4,10 +4,16 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './Hero.module.css';
 import { heroData } from '@/data/portfolio';
+import { useTheme } from '@/hooks/useTheme';
 
 export default function Hero() {
     const [typedText, setTypedText] = useState('');
     const [showCursor, setShowCursor] = useState(true);
+    const { theme, mounted } = useTheme();
+
+    const heroImage = mounted && theme === 'dark'
+        ? '/images/hero-illustration-dark.png'
+        : heroData.image;
 
     useEffect(() => {
         const text = heroData.title;
@@ -75,7 +81,7 @@ export default function Hero() {
                 <div className={styles.heroImage}>
                     <div className={styles.heroImageWrapper}>
                         <Image
-                            src={heroData.image}
+                            src={heroImage}
                             alt="Developer workspace illustration"
                             width={500}
                             height={500}

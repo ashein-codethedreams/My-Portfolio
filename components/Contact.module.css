@@ -87,11 +87,12 @@
 }
 
 .contactForm {
-    background: var(--bg-primary);
+    background: var(--bg-card);
     padding: 40px;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--border-subtle);
+    transition: background var(--transition-theme);
 }
 
 .formGroup {
@@ -110,13 +111,13 @@
 .formGroup textarea {
     width: 100%;
     padding: 14px 18px;
-    border: 2px solid #E9ECEF;
+    border: 2px solid var(--border-color);
     border-radius: var(--radius-sm);
     font-family: inherit;
     font-size: 0.95rem;
     color: var(--text-heading);
-    transition: border-color var(--transition-fast);
-    background: var(--bg-secondary);
+    transition: border-color var(--transition-fast), background var(--transition-theme), color var(--transition-theme);
+    background: var(--bg-input);
     outline: none;
 }
 
@@ -128,7 +129,7 @@
 .formGroup input:focus,
 .formGroup textarea:focus {
     border-color: var(--primary-start);
-    background: var(--bg-primary);
+    background: var(--bg-card);
 }
 
 .formGroup textarea {

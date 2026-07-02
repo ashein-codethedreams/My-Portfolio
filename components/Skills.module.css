@@ -43,9 +43,10 @@
 
 .skillBar {
     height: 10px;
-    background: #E9ECEF;
+    background: var(--bg-secondary);
     border-radius: var(--radius-full);
     overflow: hidden;
+    transition: background var(--transition-theme);
 }
 
 .skillFill {

@@ -5,12 +5,12 @@
 }
 
 .certificateCard {
-    background: var(--bg-primary);
+    background: var(--bg-card);
     border-radius: var(--radius-lg);
     padding: 32px;
     box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    transition: all var(--transition-base);
+    border: 1px solid var(--border-subtle);
+    transition: all var(--transition-base), background var(--transition-theme);
     display: flex;
     gap: 20px;
 }

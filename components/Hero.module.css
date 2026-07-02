@@ -6,6 +6,11 @@
     position: relative;
     background: linear-gradient(135deg, #F8F9FE 0%, #EEF2FF 50%, #F0F4FF 100%);
     overflow: hidden;
+    transition: background var(--transition-theme);
+}
+
+[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, #0B1120 0%, #0E1628 50%, #0D1835 100%);
 }
 
 .hero::before {
@@ -93,11 +98,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg-primary);
+    background: var(--bg-card);
     box-shadow: var(--shadow-sm);
     color: var(--text-heading);
     font-size: 1.1rem;
-    transition: all var(--transition-base);
+    transition: all var(--transition-base), background var(--transition-theme);
 }
 
 .socialLink:hover {
@@ -117,6 +122,16 @@
     position: relative;
     max-width: 500px;
     animation: float 6s ease-in-out infinite;
+}
+
+.heroImageWrapper img {
+    transition: opacity 0.4s ease;
+    border-radius: var(--radius-lg);
+}
+
+[data-theme="dark"] .heroImageWrapper {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
 }
 
 .heroBlob {
@@ -147,10 +162,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg-primary);
+    background: var(--bg-card);
     box-shadow: var(--shadow-md);
     color: var(--primary-start);
     font-size: 0.9rem;
+    transition: background var(--transition-theme);
 }
 
 @media (max-width: 1024px) {

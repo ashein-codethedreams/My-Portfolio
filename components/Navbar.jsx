@@ -5,6 +5,7 @@ import styles from './Navbar.module.css';
 import { navLinks } from '@/data/portfolio';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { useActiveSection } from '@/hooks/useIntersectionObserver';
+import { useTheme } from '@/hooks/useTheme';
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -14,6 +15,7 @@ export default function Navbar() {
         []
     );
     const activeId = useActiveSection(sectionIds);
+    const { theme, toggleTheme, mounted } = useTheme();
 
     const toggleMenu = () => {
         setMenuOpen((prev) => !prev);
@@ -33,7 +35,8 @@ export default function Navbar() {
             if (
                 menuOpen &&
                 !e.target.closest(`.${styles.navMenu}`) &&
-                !e.target.closest(`.${styles.hamburger}`)
+                !e.target.closest(`.${styles.hamburger}`) &&
+                !e.target.closest(`.${styles.themeToggle}`)
             ) {
                 setMenuOpen(false);
             }
@@ -50,6 +53,8 @@ export default function Navbar() {
             target.scrollIntoView({ behavior: 'smooth' });
         }
     };
+
+    const isDark = theme === 'dark';
 
     return (
         <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} id="navbar">
@@ -75,15 +80,29 @@ export default function Navbar() {
                         </li>
                     ))}
                 </ul>
-                <button
-                    className={`${styles.hamburger} ${menuOpen ? styles.hamburgerActive : ''}`}
-                    onClick={toggleMenu}
-                    aria-label="Toggle navigation menu"
-                >
-                    <span className={styles.bar}></span>
-                    <span className={styles.bar}></span>
-                    <span className={styles.bar}></span>
-                </button>
+                <div className={styles.navActions}>
+                    {mounted && (
+                        <button
+                            className={styles.themeToggle}
+                            onClick={toggleTheme}
+                            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+                            id="theme-toggle-btn"
+                        >
+                            <span className={styles.themeToggleIcon}>
+                                <i className={isDark ? 'fas fa-sun' : 'fas fa-moon'}></i>
+                            </span>
+                        </button>
+                    )}
+                    <button
+                        className={`${styles.hamburger} ${menuOpen ? styles.hamburgerActive : ''}`}
+                        onClick={toggleMenu}
+                        aria-label="Toggle navigation menu"
+                    >
+                        <span className={styles.bar}></span>
+                        <span className={styles.bar}></span>
+                        <span className={styles.bar}></span>
+                    </button>
+                </div>
             </div>
         </nav>
     );

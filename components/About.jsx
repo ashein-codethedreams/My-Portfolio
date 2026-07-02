@@ -5,9 +5,15 @@ import styles from './About.module.css';
 import SectionHeader from './SectionHeader';
 import { aboutData } from '@/data/portfolio';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { useTheme } from '@/hooks/useTheme';
 
 export default function About() {
     const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+    const { theme, mounted } = useTheme();
+
+    const aboutImage = mounted && theme === 'dark'
+        ? '/images/about-illustration-dark.png'
+        : aboutData.image;
 
     return (
         <section className="section" id="about">
@@ -17,7 +23,7 @@ export default function About() {
                     <div className={styles.aboutImage}>
                         <div className={styles.aboutImageWrapper}>
                             <Image
-                                src={aboutData.image}
+                                src={aboutImage}
                                 alt="Professional desk setup"
                                 width={600}
                                 height={450}
