@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Aye Myat Mon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3B82F6;
+            --dark: #1E293B;
+            --text: #334155;
+            --light: #64748B;
+            --bg-aside: #F8FAFC;
+            --border: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 13px;
+            background: #F1F5F9;
+            padding: 40px 0;
+        }
+
+        /* Page Container (A4 aspect) */
+        .page {
+            background: #ffffff;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 240px 1fr;
+        }
+
+        /* Sidebar Column */
+        aside {
+            background: var(--bg-aside);
+            border-right: 1px solid var(--border);
+            padding: 35px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .profile-container {
+            text-align: center;
+        }
+
+        .avatar {
+            width: 130px;
+            height: 150px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 16px;
+        }
+
+        .name-en {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 2px;
+            line-height: 1.2;
+        }
+
+        .role-badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 4px 12px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            border-radius: 9999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .aside-section-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--dark);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            width: 14px;
+            text-align: center;
+        }
+
+        .skills-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skill-category-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            font-size: 0.72rem;
+            padding: 2px 8px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text);
+        }
+
+        .languages-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.8rem;
+        }
+
+        /* Main Content Column */
+        main {
+            padding: 40px 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .main-section-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--dark);
+            padding-bottom: 6px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .main-section-title i {
+            color: var(--primary);
+        }
+
+        .summary-text {
+            font-size: 0.85rem;
+            color: var(--text);
+            text-align: justify;
+        }
+
+        /* Timeline / Experience */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+
+        .company-name {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .timeline-period {
+            font-size: 0.78rem;
+            color: var(--light);
+            font-weight: 500;
+        }
+
+        .job-title {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .project-block {
+            margin-top: 8px;
+            padding-left: 12px;
+            border-left: 2px solid var(--border);
+        }
+
+        .project-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 2px;
+        }
+
+        .project-desc {
+            font-size: 0.8rem;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .project-meta {
+            font-size: 0.75rem;
+            color: var(--light);
+        }
+
+        /* Certifications & Education */
+        .cert-list, .edu-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cert-item, .edu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.82rem;
+        }
+
+        .cert-name, .edu-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .cert-date, .edu-date {
+            color: var(--light);
+            font-size: 0.78rem;
+        }
+
+        /* Print styles optimization */
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                width: 210mm;
+                height: 297mm;
+                page-break-after: avoid;
+            }
+            aside {
+                background: #F8FAFC !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .role-badge {
+                background: rgba(59, 130, 246, 0.1) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <!-- SIDEBAR -->
+        <aside>
+            <div class="profile-container">
+                <img src="/assets/MyPhoto.jpg" alt="Profile Photo" class="avatar">
+                <h1 class="name-en">Aye Myat Mon</h1>
+                <span class="role-badge">Frontend Developer</span>
+            </div>
+
+            <!-- CONTACT -->
+            <div>
+                <h2 class="aside-section-title">Contact</h2>
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>heroglasses155@gmail.com</span>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+95 9454041324</span>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Hlaing, Yangon</span>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>github.com/ashein-codethedreams</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- SKILLS -->
+            <div>
+                <h2 class="aside-section-title">Skills</h2>
+                <div class="skills-group">
+                    <div>
+                        <p class="skill-category-title">Languages</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">HTML5/CSS3</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="skill-category-title">Frameworks</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">Electron.js</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LANGUAGES -->
+            <div>
+                <h2 class="aside-section-title">Languages</h2>
+                <ul class="languages-list">
+                    <li><strong>Burmese:</strong> Native</li>
+                    <li><strong>Japanese:</strong> Conversational (N3)</li>
+                    <li><strong>English:</strong> Conversational</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <!-- SUMMARY -->
+            <section>
+                <h2 class="main-section-title"><i class="fas fa-user"></i> Professional Summary</h2>
+                <p class="summary-text">
+                    Result-driven Frontend Developer with 3+ years of experience specializing in React, Next.js, and modern JavaScript ecosystems. Proven history of building responsive web applications and cross-platform desktop utilities (Electron). Combines frontend expertise with international corporate experience, including a 4-month intensive training program in Miyazaki, Japan (AOTS). Conversational in Japanese (JLPT N3).
+                </p>
+            </section>
+
+            <!-- EXPERIENCE -->
+            <section>
+                <h2 class="main-section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+                <div class="timeline">
+                    <!-- GIC -->
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="company-name">Global Innovation Consulting (GIC) Inc.</span>
+                            <span class="timeline-period">Jan 2025 〜 Feb 2026</span>
+                        </div>
+                        <p class="job-title">IT Programmer</p>
+                        <div class="project-block">
+                            <h4 class="project-title">Japanese Insurance Platforms</h4>
+                            <p class="project-desc">Participated in developing and modernizing 4+ client-facing insurance websites using Java, JavaScript, and Bootstrap. Conducted unit and integration testing to ensure high quality standards.</p>
+                            <p class="project-meta"><strong>Tech:</strong> Java, JavaScript, Bootstrap, HTML5, CSS3, Testing</p>
+                        </div>
+                    </div>
+
+                    <!-- GIC Japan / AOTS -->
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="company-name">GIC Japan / AOTS Training Program (Miyazaki, Japan)</span>
+                            <span class="timeline-period">2025 (4 months)</span>
+                        </div>
+                        <p class="job-title">Trainee Programmer</p>
+                        <div class="project-block">
+                            <p class="project-desc">Completed onsite technical training focused on system modernization, learning how to transition legacy codebases (COBOL, RPG, LANSA) into modern web infrastructures. Explored AWS cloud concepts and low-code dev using GeneXus.</p>
+                        </div>
+                    </div>
+
+                    <!-- Digital Base -->
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="company-name">Digital Base IT Company</span>
+                            <span class="timeline-period">Feb 2023 〜 Dec 2024</span>
+                        </div>
+                        <p class="job-title">React Developer</p>
+                        
+                        <div class="project-block" style="margin-bottom: 8px;">
+                            <h4 class="project-title">Learning Management System (LMS)</h4>
+                            <p class="project-desc">Engineered dedicated admin portal widgets, exam evaluation modules, and dynamic certification issuance templates.</p>
+                            <p class="project-meta"><strong>Tech:</strong> React, Next.js, Redux, REST API</p>
+                        </div>
+
+                        <div class="project-block">
+                            <h4 class="project-title">Online Book Shop (panoramyanmar.com)</h4>
+                            <p class="project-desc">Implemented fully responsive UI, cart workflow logic, and order handling system integrations.</p>
+                            <p class="project-meta"><strong>Tech:</strong> React, CSS Modules, Responsive Layout</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CERTIFICATIONS -->
+            <section>
+                <h2 class="main-section-title"><i class="fas fa-certificate"></i> Certifications</h2>
+                <ul class="cert-list">
+                    <li class="cert-item">
+                        <span class="cert-name">Fundamentals of Engineering (FE) Certificate</span>
+                        <span class="cert-date">Certified</span>
+                    </li>
+                    <li class="cert-item">
+                        <span class="cert-name">Japanese Language Proficiency Test (JLPT) – N3</span>
+                        <span class="cert-date">Certified</span>
+                    </li>
+                    <li class="cert-item">
+                        <span class="cert-name">Certificate of Specialized Technical Training – AOTS Japan</span>
+                        <span class="cert-date">Completed</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- EDUCATION -->
+            <section>
+                <h2 class="main-section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <ul class="edu-list">
+                    <li class="edu-item">
+                        <span class="edu-name">University of Mandalay</span>
+                        <span class="edu-date">Dec 2015 〜 Mar 2020</span>
+                    </li>
+                    <li class="edu-item" style="font-size: 0.78rem; color: var(--light); padding-left: 10px;">
+                        <span>Bachelor of Science (B.Sc.) in Computer Science</span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

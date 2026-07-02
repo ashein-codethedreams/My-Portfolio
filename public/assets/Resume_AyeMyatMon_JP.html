@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職務経歴書 - Aye Myat Mon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3B82F6;
+            --dark: #1E293B;
+            --text: #334155;
+            --light: #64748B;
+            --bg-aside: #F8FAFC;
+            --border: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 13px;
+            background: #F1F5F9;
+            padding: 40px 0;
+        }
+
+        /* Page Container (A4 aspect) */
+        .page {
+            background: #ffffff;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 240px 1fr;
+        }
+
+        /* Sidebar Column */
+        aside {
+            background: var(--bg-aside);
+            border-right: 1px solid var(--border);
+            padding: 35px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .profile-container {
+            text-align: center;
+        }
+
+        .avatar {
+            width: 130px;
+            height: 150px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 16px;
+        }
+
+        .name-ja {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 2px;
+        }
+
+        .name-en {
+            font-size: 0.9rem;
+            color: var(--light);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .role-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .aside-section-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--dark);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            width: 14px;
+            text-align: center;
+        }
+
+        .skills-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skill-category-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            font-size: 0.72rem;
+            padding: 2px 8px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text);
+        }
+
+        .languages-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.8rem;
+        }
+
+        /* Main Content Column */
+        main {
+            padding: 40px 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .main-section-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--dark);
+            padding-bottom: 6px;
+            margin-bottom: 16px;
+        }
+
+        .main-section-title i {
+            color: var(--primary);
+        }
+
+        .summary-text {
+            font-size: 0.85rem;
+            color: var(--text);
+            text-align: justify;
+        }
+
+        /* Timeline / Experience */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+        }
+
+        .company-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .timeline-period {
+            font-size: 0.8rem;
+            color: var(--light);
+            font-weight: 500;
+        }
+
+        .job-title {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .project-block {
+            margin-top: 10px;
+            padding-left: 12px;
+            border-left: 2px solid var(--border);
+        }
+
+        .project-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .project-desc {
+            font-size: 0.8rem;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .project-meta {
+            font-size: 0.75rem;
+            color: var(--light);
+        }
+
+        /* Certifications & Education */
+        .cert-list, .edu-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cert-item, .edu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.82rem;
+        }
+
+        .cert-name, .edu-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .cert-date, .edu-date {
+            color: var(--light);
+            font-size: 0.78rem;
+        }
+
+        /* Print styles optimization */
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                width: 210mm;
+                height: 297mm;
+                page-break-after: avoid;
+            }
+            aside {
+                background: #F8FAFC !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .role-badge {
+                background: rgba(59, 130, 246, 0.1) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <!-- SIDEBAR -->
+        <aside>
+            <div class="profile-container">
+                <img src="/assets/MyPhoto.jpg" alt="Profile Photo" class="avatar">
+                <h1 class="name-ja">エーミャッモン</h1>
+                <p class="name-en">Aye Myat Mon</p>
+                <span class="role-badge">フロントエンド開発</span>
+            </div>
+
+            <!-- CONTACT -->
+            <div>
+                <h2 class="aside-section-title">連絡先</h2>
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>heroglasses155@gmail.com</span>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+95 9454041324</span>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>ミャンマー ヤンゴン</span>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>github.com/ashein-codethedreams</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- SKILLS -->
+            <div>
+                <h2 class="aside-section-title">スキル</h2>
+                <div class="skills-group">
+                    <div>
+                        <p class="skill-category-title">言語</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">HTML5/CSS3</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="skill-category-title">フレームワーク</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">Electron.js</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LANGUAGES -->
+            <div>
+                <h2 class="aside-section-title">語学力</h2>
+                <ul class="languages-list">
+                    <li><strong>ビルマ語:</strong> 母国語</li>
+                    <li><strong>日本語:</strong> 会話可能 (JLPT N3)</li>
+                    <li><strong>英語:</strong> 会話可能</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <!-- SUMMARY -->
+            <section>
+                <h2 class="main-section-title"><i class="fas fa-user"></i> 職務要約</h2>
+                <p class="summary-text">
+                    フロントエンド開発を中心に3年以上の実務経験を持つエンジニアです。主にReact、Next.js、TypeScriptを用いたWebアプリケーションや、Electronによるデスクトップアプリ開発に従事してまいりました。日本企業での勤務および宮崎県での4ヶ月間の実務研修（AOTS）の経験があり、日本のビジネスマナーや開発フローを熟知しております。
+                </p>
+            </section>
+
+            <!-- EXPERIENCE -->
+            <section>
+                <h2 class="main-section-title"><i class="fas fa-briefcase"></i> 職務経歴</h2>
+                <div class="timeline">
+                    <!-- GIC -->
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="company-name">Global Innovation Consulting (GIC) 株式会社</span>
+                            <span class="timeline-period">2025年1月 〜 2026年2月</span>
+                        </div>
+                        <p class="job-title">ITプログラマー / 正社員</p>
+                        <div class="project-block">
+                            <h4 class="project-title">日本向け保険システムおよび関連ポータルサイトの構築・移行</h4>
+                            <p class="project-desc">日本市場向け保険ポータルサイト（4サイト以上）のモダン化・新規機能実装を担当。品質基準に沿ったテストケースの設計とコーディングを実行。</p>
+                            <p class="project-meta"><strong>技術:</strong> Java, JavaScript, Bootstrap, HTML5, CSS3, Unit Testing</p>
+                        </div>
+                    </div>
+
+                    <!-- GIC Japan / AOTS -->
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="company-name">GIC日本／AOTS実務研修プログラム（日本・宮崎県）</span>
+                            <span class="timeline-period">2025年 (4ヶ月間)</span>
+                        </div>
+                        <p class="job-title">実務研修生プログラマー</p>
+                        <div class="project-block">
+                            <p class="project-desc">システムモダナイゼーション実務を体得。レガシー言語（COBOL、RPG）からモダンアーキテクチャへの移行検討、GeneXusを用いた開発、AWSクラウドファンデーションについて学習しました。</p>
+                        </div>
+                    </div>
+
+                    <!-- Digital Base -->
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="company-name">Digital Base IT Company</span>
+                            <span class="timeline-period">2023年2月 〜 2024年12月</span>
+                        </div>
+                        <p class="job-title">React開発エンジニア / 正社員</p>
+                        
+                        <div class="project-block" style="margin-bottom: 8px;">
+                            <h4 class="project-title">学習管理システム (LMS)</h4>
+                            <p class="project-desc">教材配信管理ポータルにおいて、テスト自動評価システムおよびPDFによる修了証の動的生成を実装。</p>
+                            <p class="project-meta"><strong>技術:</strong> React, Next.js, Redux, REST API</p>
+                        </div>
+
+                        <div class="project-block">
+                            <h4 class="project-title">オンライン書店 (panoramyanmar.com) の新規立ち上げ</h4>
+                            <p class="project-desc">レスポンシブデザイン設計からカート機能・注文処理部分の設計・コーディングまで一貫して担当。</p>
+                            <p class="project-meta"><strong>技術:</strong> React, CSS Modules, Responsive Layout</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CERTIFICATIONS -->
+            <section>
+                <h2 class="main-section-title"><i class="fas fa-certificate"></i> 資格・免許</h2>
+                <ul class="cert-list">
+                    <li class="cert-item">
+                        <span class="cert-name">基本情報技術者試験 (FE - Fundamentals of Engineering)</span>
+                        <span class="cert-date">合格</span>
+                    </li>
+                    <li class="cert-item">
+                        <span class="cert-name">日本語能力試験 (JLPT) N3</span>
+                        <span class="cert-date">合格</span>
+                    </li>
+                    <li class="cert-item">
+                        <span class="cert-name">AOTS技術研修プログラム証明書 (Miyazaki program)</span>
+                        <span class="cert-date">取得</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- EDUCATION -->
+            <section>
+                <h2 class="main-section-title"><i class="fas fa-graduation-cap"></i> 学歴</h2>
+                <ul class="edu-list">
+                    <li class="edu-item">
+                        <span class="edu-name">マンダレー大学 (University of Mandalay)</span>
+                        <span class="edu-date">2015年12月 〜 2020年3月</span>
+                    </li>
+                    <li class="edu-item" style="font-size: 0.78rem; color: var(--light); padding-left: 10px;">
+                        <span>コンピュータサイエンス専攻・理学士 (B.Sc.) 取得</span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
