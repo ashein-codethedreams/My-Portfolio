@@ -24,11 +24,20 @@ export const metadata = {
         description: 'Explore the portfolio of Aye Myat Mon, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes.',
         type: 'website',
         locale: 'en_US',
+        images: [
+            {
+                url: '/og-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Aye Myat Mon | Frontend Software Developer Portfolio',
+            }
+        ]
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Aye Myat Mon | Frontend Software Developer - Portfolio',
         description: 'Explore the portfolio of Aye Myat Mon, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes.',
+        images: ['/og-image.png'],
     }
 };
 
