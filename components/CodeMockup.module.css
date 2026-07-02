@@ -47,7 +47,7 @@
 .windowControls {
     display: flex;
     gap: 8px;
-    margin-right: 24px;
+    margin-right: 20px;
 }
 
 .dot {
@@ -61,42 +61,54 @@
 .minimize { background: #ffbd2e; }
 .maximize { background: #27c93f; }
 
-/* Tabs */
+/* Tab Container */
 .tabContainer {
     display: flex;
     height: 100%;
+    align-items: flex-end;
 }
 
 .tab {
     display: flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(13, 20, 38, 0.85);
-    padding: 0 16px;
-    font-size: 0.8rem;
-    color: #94a3b8;
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
-    border-top: 2px solid var(--primary-start);
-    height: 100%;
+    gap: 6px;
+    background: rgba(8, 12, 24, 0.5);
+    padding: 0 12px;
+    font-size: 0.72rem;
+    color: #64748b;
+    border-right: 1px solid rgba(255, 255, 255, 0.04);
+    height: 85%;
+    cursor: pointer;
     font-weight: 500;
+    transition: all 0.2s;
+    border-top: 2px solid transparent;
 }
 
 [data-theme="light"] .tab {
-    background: #FFFFFF;
-    color: #475569;
-    border-right: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.closeTab {
-    font-size: 1.1rem;
+    background: #E2E8F0;
     color: #64748b;
-    cursor: pointer;
-    margin-left: 4px;
-    transition: color 0.2s;
+    border-right: 1px solid rgba(0, 0, 0, 0.04);
 }
 
-.closeTab:hover {
-    color: #f1f5f9;
+.tab:hover {
+    background: rgba(13, 20, 38, 0.4);
+    color: #94a3b8;
+}
+
+[data-theme="light"] .tab:hover {
+    background: #F1F5F9;
+}
+
+.activeTab {
+    background: rgba(13, 20, 38, 0.85) !important;
+    color: #f1f5f9 !important;
+    border-top-color: var(--primary-start);
+    font-weight: 600;
+}
+
+[data-theme="light"] .activeTab {
+    background: #FFFFFF !important;
+    color: var(--primary-start) !important;
 }
 
 /* Workspace layout */
@@ -133,7 +145,7 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
 }
 
 .fileItem {
@@ -141,7 +153,7 @@
     align-items: center;
     gap: 8px;
     padding: 6px 8px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #94a3b8;
     border-radius: 4px;
     cursor: pointer;
@@ -178,7 +190,7 @@
     padding: 16px;
     display: flex;
     gap: 12px;
-    overflow-y: auto;
+    overflow: auto;
     font-family: 'Consolas', 'Courier New', Courier, monospace;
 }
 
@@ -187,7 +199,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 4px;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: #475569;
     user-select: none;
     line-height: 1.5;
@@ -200,10 +212,9 @@
 
 .codeContent {
     margin: 0;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     line-height: 1.5;
-    white-space: pre-wrap;
-    word-break: break-all;
+    white-space: pre; /* Keep code format clean, no ugly mid-word wrapping */
     font-family: inherit;
 }
 
@@ -320,16 +331,38 @@
     background: rgba(0, 0, 0, 0.08);
 }
 
-@media (max-width: 480px) {
+/* Mobile Media Queries */
+@media (max-width: 540px) {
     .ideContainer {
-        height: 320px;
+        height: 330px;
     }
     
     .ideWorkspace {
-        grid-template-columns: 100px 1fr;
+        grid-template-columns: 1fr; /* Hide sidebar list layout */
+    }
+    
+    .ideSidebar {
+        display: none; /* Hide sidebar completely */
+    }
+    
+    .tab {
+        padding: 0 8px;
+        font-size: 0.68rem;
     }
     
     .lineNumbers {
-        display: none;
+        display: none; /* Give more horizontal room */
+    }
+    
+    .editorArea {
+        padding: 12px;
+    }
+    
+    .codeContent {
+        font-size: 0.72rem;
+    }
+    
+    .techBadge {
+        display: none; /* Hide floating absolute elements on small viewports */
     }
 }

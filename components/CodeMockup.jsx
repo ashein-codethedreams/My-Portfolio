@@ -22,18 +22,22 @@ export default function CodeMockup() {
                     <span className={`${styles.dot} ${styles.maximize}`}></span>
                 </div>
                 <div className={styles.tabContainer}>
-                    <div className={styles.tab}>
-                        <i className={activeFile === 'Developer.jsx' ? 'fab fa-react' : activeFile === 'Skills.css' ? 'fas fa-hashtag' : 'fas fa-braces'} 
-                           style={{ color: activeFile === 'Developer.jsx' ? '#61dafb' : activeFile === 'Skills.css' ? '#e389b9' : '#ffd54f' }}></i>
-                        <span>{activeFile}</span>
-                        <span className={styles.closeTab}>×</span>
-                    </div>
+                    {files.map(file => (
+                        <div 
+                            key={file.name} 
+                            className={`${styles.tab} ${activeFile === file.name ? styles.activeTab : ''}`}
+                            onClick={() => setActiveFile(file.name)}
+                        >
+                            <i className={file.icon} style={{ color: file.color }}></i>
+                            <span>{file.name}</span>
+                        </div>
+                    ))}
                 </div>
             </div>
 
             {/* IDE Workspace */}
             <div className={styles.ideWorkspace}>
-                {/* Sidebar */}
+                {/* Sidebar Explorer (Hidden on mobile) */}
                 <div className={styles.ideSidebar}>
                     <div className={styles.sidebarTitle}>EXPLORER</div>
                     <ul className={styles.fileList}>
