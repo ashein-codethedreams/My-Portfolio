@@ -19,6 +19,17 @@ export const metadata = {
     title: 'Aye Myat Mon | Frontend Software Developer - Portfolio',
     description:
         'Portfolio of Aye Myat Mon, a passionate Frontend Software Developer specializing in React, Next.js, and modern web technologies.',
+    openGraph: {
+        title: 'Aye Myat Mon | Frontend Software Developer - Portfolio',
+        description: 'Explore the portfolio of Aye Myat Mon, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes.',
+        type: 'website',
+        locale: 'en_US',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Aye Myat Mon | Frontend Software Developer - Portfolio',
+        description: 'Explore the portfolio of Aye Myat Mon, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes.',
+    }
 };
 
 export default function RootLayout({ children }) {
