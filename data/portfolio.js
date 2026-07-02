@@ -208,49 +208,99 @@ export const certificates = {
 
 export const experienceData = {
     sectionHeader: {
-        en: { subtitle: 'My Journey', title: 'Foreign Training Experience' },
-        ja: { subtitle: '私の歩み', title: '海外技術研修経験' },
+        en: { subtitle: 'My Journey', title: 'Work Experience' },
+        ja: { subtitle: '私の歩み', title: '実務経歴' },
     },
-    en: {
-        badge: 'AOTS Japan',
-        title: 'Specialized Technical Training',
-        location: 'Miyazaki, Japan',
-        period: '4 months intensive program',
-        description:
-            'Completed an intensive software development training program at a leading tech hub, gaining hands-on experience, agile methodologies, and collaborative software engineering. Collaborated closely with local Japanese development teams on modernization projects.',
-        highlights: [
-            'Legacy Systems Modernization',
-            'Enterprise CI/CD Pipelines',
-            'Cross-cultural Teamwork',
-            'AOTS Technical Training Completion',
+    stats: {
+        en: [
+            { number: '3+', label: 'Years Exp.' },
+            { number: '6+', label: 'Real Projects' },
+            { number: '2', label: 'Countries Worked' },
+            { number: 'JLPT N3', label: 'Language Level' },
         ],
-        stats: [
-            { number: '4', label: 'Months' },
-            { number: '4+', label: 'Languages' },
-            { number: '20+', label: 'Colleagues' },
-            { number: '2', label: 'Countries' },
-        ],
+        ja: [
+            { number: '3年以上', label: '実務経験' },
+            { number: '6件以上', label: '開発実績' },
+            { number: '2ヶ国', label: '勤務経験国' },
+            { number: 'JLPT N3', label: '日本語レベル' },
+        ]
     },
-    ja: {
-        badge: 'AOTS 日本',
-        title: '専門技術研修プログラム',
-        location: '宮崎県、日本',
-        period: '4ヶ月間の集中プログラム',
-        description:
-            '日本国内のIT研修機関にてソフトウェア開発研修プログラムを修了。アジャイル開発手法やチーム開発を実践し、日本側エンジニアと連携しながらシステム開発に取り組みました。',
-        highlights: [
-            'システムモダナイゼーション',
-            'レガシー言語対応',
-            'CI/CDパイプライン管理',
-            '異文化チームでの協働',
-        ],
-        stats: [
-            { number: '4', label: 'ヶ月' },
-            { number: '4+', label: '言語' },
-            { number: '20+', label: '同僚' },
-            { number: '2', label: 'ヶ国' },
-        ],
-    },
+    en: [
+        {
+            company: 'Global Innovation Consulting (GIC) Inc.',
+            role: 'IT Programmer',
+            location: 'Tokyo, Japan / Yangon, Myanmar',
+            period: 'Jan 2025 – Feb 2026',
+            description: 'Developed and modernized client-facing web portals, ensuring top-tier code quality and integration.',
+            highlights: [
+                'Successfully modernized and implemented features for 4+ client-facing insurance websites using Java and Bootstrap.',
+                'Planned and performed unit and integration testing pipelines aligning with strict Japanese enterprise standards.',
+                'Collaborated in a cross-cultural environment, adapting to Japanese business workflows and methodologies.'
+            ]
+        },
+        {
+            company: 'GIC Japan / AOTS Training Program',
+            role: 'Trainee Programmer',
+            location: 'Miyazaki, Japan',
+            period: '2025 (4 months intensive)',
+            description: 'Selected for a specialized tech training program in Japan, focusing on modern enterprise architectures.',
+            highlights: [
+                'Studied transition pipelines for legacy codebases (COBOL, RPG, LANSA) to modern web systems.',
+                'Studied cloud deployment basics on AWS and rapid application building using GeneXus.',
+                'Experienced authentic Japanese workplace workflows and team dynamics directly.'
+            ]
+        },
+        {
+            company: 'Digital Base IT Company',
+            role: 'React Developer',
+            location: 'Yangon, Myanmar',
+            period: 'Feb 2023 – Dec 2024',
+            description: 'Owned client-side modular architectures and frontend system integrations for high-performance applications.',
+            highlights: [
+                'Engineered key LMS elements, including an automated exam evaluation engine and dynamic PDF certificate generation.',
+                'Built fully responsive layouts and order workflows for panoramyanmar.com online bookstore.',
+                'Packaged an e-commerce dashboard as a cross-platform desktop tool using Electron.js with Excel reporting.'
+            ]
+        }
+    ],
+    ja: [
+        {
+            company: 'Global Innovation Consulting (GIC) 株式会社',
+            role: 'ITプログラマー',
+            location: '東京 / ヤンゴン',
+            period: '2025年1月 ～ 2026年2月',
+            description: 'クライアント企業向けシステム開発ポータルサイトの構築・移行、およびテスト設計とコーディングを担当。',
+            highlights: [
+                'Java、Bootstrapを用い、日本企業向けの保険関連ポータルサイト（4サイト以上）のモダン化を担当。',
+                '詳細な単体・結合テストプロセスを設計・実施し、日本の厳しいエンタープライズ品質基準を満たしました。',
+                '日本チームとの直接的な連携を通じ、日本のビジネスマナーや開発フローに適応して業務を進めました。'
+            ]
+        },
+        {
+            company: 'GIC日本／AOTS実務研修プログラム',
+            role: '実務研修生プログラマー',
+            location: '日本・宮崎県',
+            period: '2025年 (4ヶ月間)',
+            description: 'システムモダナイゼーションに焦点を当てた、日本現地での集中実務研修生に選抜。',
+            highlights: [
+                'COBOLやRPGといったレガシープログラムから、モダンなWebシステムへの移行プロセスを習得。',
+                'AWSによるクラウド基盤設計の基礎、およびGeneXusを用いたローコードでの高速開発手法を学習。',
+                '日本の現場におけるプロジェクト管理、チームコラボレーション、専門的なプロセスを実践しました。'
+            ]
+        },
+        {
+            company: 'Digital Base IT Company',
+            role: 'React開発エンジニア',
+            location: 'ヤンゴン、ミャンマー',
+            period: '2023年2月 ～ 2024年12月',
+            description: '専任フロントエンドデベロッパーとして、システム基本設計・API連携・ステート管理等を担当。',
+            highlights: [
+                '学習管理システム(LMS)において、テスト自動評価エンジンと動的なPDF修了証書生成機能を開発。',
+                'オンライン書店(panoramyanmar.com)のカート設計、チェックアウトフローおよびレスポンシブデザインの実装。',
+                'Electron、Chart.js、Excel出力モジュールを用い、店舗オーナー向け店舗管理ダッシュボードアプリをパッケージ開発。'
+            ]
+        }
+    ]
 };
 
 export const contactData = {
