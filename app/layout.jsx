@@ -26,7 +26,7 @@ export const metadata = {
         locale: 'en_US',
         images: [
             {
-                url: '/og-image.png',
+                url: 'https://portfolio.enttnine.online/og-image.png',
                 width: 1200,
                 height: 630,
                 alt: 'Aye Myat Mon | Frontend Software Developer Portfolio',
@@ -37,7 +37,7 @@ export const metadata = {
         card: 'summary_large_image',
         title: 'Aye Myat Mon | Frontend Software Developer - Portfolio',
         description: 'Explore the portfolio of Aye Myat Mon, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes.',
-        images: ['/og-image.png'],
+        images: ['https://portfolio.enttnine.online/og-image.png'],
     }
 };
 

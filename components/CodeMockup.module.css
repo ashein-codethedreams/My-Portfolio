@@ -334,35 +334,57 @@
 /* Mobile Media Queries */
 @media (max-width: 540px) {
     .ideContainer {
-        height: 330px;
+        height: 280px; /* Shorter to fit mobile viewports nicely */
     }
     
-    .ideWorkspace {
-        grid-template-columns: 1fr; /* Hide sidebar list layout */
+    .windowControls {
+        display: none; /* Hide macOS window controls on mobile to save 72px of space */
     }
     
-    .ideSidebar {
-        display: none; /* Hide sidebar completely */
+    .tabContainer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Split tabs into 3 equal columns */
+        height: 100%;
+        align-items: flex-end;
     }
     
     .tab {
-        padding: 0 8px;
-        font-size: 0.68rem;
+        justify-content: center;
+        padding: 0 4px;
+        font-size: 0.65rem;
+        height: 100%;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        border-top-width: 1.5px;
     }
     
-    .lineNumbers {
-        display: none; /* Give more horizontal room */
+    [data-theme="light"] .tab {
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .ideWorkspace {
+        grid-template-columns: 1fr; /* Stack layout */
+        min-width: 0; /* Allow layout shrinking */
+    }
+    
+    .ideSidebar {
+        display: none; /* Collapses explorer sidebar */
     }
     
     .editorArea {
         padding: 12px;
+        min-width: 0; /* Allow editor area to shrink */
+    }
+    
+    .lineNumbers {
+        display: none; /* Hide line numbers to maximize spacing */
     }
     
     .codeContent {
-        font-size: 0.72rem;
+        font-size: 0.7rem; /* Make code fonts fit perfectly */
     }
     
     .techBadge {
-        display: none; /* Hide floating absolute elements on small viewports */
+        display: none; /* Hide orbiting badges to keep mobile clean */
     }
 }
