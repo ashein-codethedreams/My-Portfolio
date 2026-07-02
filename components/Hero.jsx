@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './Hero.module.css';
 import { heroData } from '@/data/portfolio';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -8,30 +8,79 @@ import CodeMockup from './CodeMockup';
 
 export default function Hero() {
     const [typedText, setTypedText] = useState('');
-    const [showCursor, setShowCursor] = useState(true);
     const { lang } = useLanguage();
+    const heroRef = useRef(null);
 
     const t = heroData[lang] ?? heroData.en;
 
+    // Spotlight cursor tracking listener (High-performance direct DOM manipulation)
     useEffect(() => {
-        const text = t.title;
-        let i = 0;
-        setTypedText('');
-        setShowCursor(true);
-        const timer = setTimeout(() => {
-            const typeWriter = setInterval(() => {
-                if (i < text.length) {
-                    setTypedText(text.slice(0, i + 1));
-                    i++;
+        const handleMouseMove = (e) => {
+            if (!heroRef.current) return;
+            const rect = heroRef.current.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            heroRef.current.style.setProperty('--mouse-x', `${x}px`);
+            heroRef.current.style.setProperty('--mouse-y', `${y}px`);
+        };
+
+        const heroElement = heroRef.current;
+        if (heroElement) {
+            heroElement.addEventListener('mousemove', handleMouseMove);
+        }
+        return () => {
+            if (heroElement) {
+                heroElement.removeEventListener('mousemove', handleMouseMove);
+            }
+        };
+    }, []);
+
+    // Infinite cycling typewriter loop (bilingually matching arrays)
+    useEffect(() => {
+        const roles = lang === 'ja'
+            ? ["フロントエンドエンジニア", "React・Next.jsスペシャリスト", "バイリンガルITプログラマー"]
+            : ["Frontend Software Developer", "React & Next.js Specialist", "Bilingual IT Programmer"];
+            
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let currentText = '';
+        let timer = null;
+
+        const type = () => {
+            const currentRole = roles[roleIndex];
+
+            if (!isDeleting) {
+                // Add character
+                currentText = currentRole.substring(0, charIndex + 1);
+                setTypedText(currentText);
+                charIndex++;
+
+                if (charIndex === currentRole.length) {
+                    isDeleting = true;
+                    timer = setTimeout(type, 2500); // Hold role text for 2.5 seconds
                 } else {
-                    clearInterval(typeWriter);
-                    setTimeout(() => setShowCursor(false), 1000);
+                    timer = setTimeout(type, 80); // Typing speed
                 }
-            }, 60);
-            return () => clearInterval(typeWriter);
-        }, 300);
+            } else {
+                // Delete character
+                currentText = currentRole.substring(0, charIndex - 1);
+                setTypedText(currentText);
+                charIndex--;
+
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length; // Cycle next role
+                    timer = setTimeout(type, 500); // Pause before typing next
+                } else {
+                    timer = setTimeout(type, 40); // Deleting speed
+                }
+            }
+        };
+
+        timer = setTimeout(type, 500);
         return () => clearTimeout(timer);
-    }, [lang]); // re-run typewriter when language changes
+    }, [lang]);
 
     const handleSmoothScroll = (e, href) => {
         e.preventDefault();
@@ -40,17 +89,19 @@ export default function Hero() {
     };
 
     return (
-        <section className={styles.hero} id="home">
+        <section className={styles.hero} id="home" ref={heroRef}>
+            <div className={styles.spotlight}></div>
             <div className={`container ${styles.heroContainer}`}>
                 <div className={styles.heroContent}>
                     <p className={styles.heroGreeting}>
                         <span className={styles.wave}>👋</span> {t.greeting}
                     </p>
                     <h1 className={styles.heroName}>{heroData.name}</h1>
-                    <p className={`${styles.heroTitle} ${showCursor ? styles.typing : ''}`}>
+                    <p className={`${styles.heroTitle} ${styles.typing}`}>
                         {typedText}
                     </p>
-                    <p className={styles.heroDescription}>{t.description}</p>
+                    <p className={styles.heroDescription}>
+{t.description}</p>
                     <div className={styles.heroCta}>
                         <a
                             href="#contact"

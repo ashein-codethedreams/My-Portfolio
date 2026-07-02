@@ -9,8 +9,32 @@ import { useLanguage } from '@/hooks/useLanguage';
 function CertificateCard({ cert }) {
     const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
 
+    const handleMouseMove = (e) => {
+        const card = e.currentTarget;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const xc = rect.width / 2;
+        const yc = rect.height / 2;
+        const angleX = -(y - yc) / 15; // Sensitivity
+        const angleY = (x - xc) / 15;
+        card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale3d(1.02, 1.02, 1.02)`;
+        card.style.transition = 'transform 0.05s ease';
+    };
+
+    const handleMouseLeave = (e) => {
+        const card = e.currentTarget;
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        card.style.transition = 'transform 0.4s ease-out';
+    };
+
     return (
-        <div ref={ref} className={`${styles.certificateCard} ${isVisible ? 'reveal revealed' : 'reveal'}`}>
+        <div 
+            ref={ref} 
+            className={`${styles.certificateCard} ${isVisible ? 'reveal revealed' : 'reveal'}`}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+        >
             <div className={styles.certificateIcon}>
                 <i className={cert.icon}></i>
             </div>
