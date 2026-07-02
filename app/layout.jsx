@@ -23,7 +23,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <head>
                 {/* Anti-FOUC: runs synchronously before first paint, sets theme + lang from localStorage */}
                 <script

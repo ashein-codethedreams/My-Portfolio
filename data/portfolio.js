@@ -60,7 +60,7 @@ export const aboutData = {
     },
     en: {
         paragraphs: [
-            'I\'m a dedicated Frontend Developer with <strong>3+ years of experience</strong> building modern web applications. I specialize in React, Next.js, and TypeScript, creating seamless user interfaces that are both visually appealing and highly performant.',
+            'I\'m a dedicated Frontend Developer with <strong>3+ years of experience</strong> building modern web applications. I specialize in React, Next.js, and TypeScript, creating seamless user interfaces that combine visual appeal and high performance.',
             'My approach combines clean code practices with creative problem-solving to deliver solutions that exceed expectations. I believe in continuous learning and staying at the forefront of web technologies.',
         ],
         expertise: [
@@ -162,7 +162,7 @@ export const certificates = {
             title: 'React Developer',
             issuer: 'Digital Base',
             year: '2023',
-            description: 'Professional certificate of Completion for Digital Base Internship Program.',
+            description: 'Professional Certificate of Completion for the Digital Base Internship Program.',
         },
         {
             icon: 'fas fa-certificate',
@@ -176,7 +176,7 @@ export const certificates = {
             title: 'Code Yourself! An Introduction to Programming',
             issuer: 'Coursera',
             year: '2020',
-            description: 'Introduction to programming course authorized by The University of Edinburgh.',
+            description: 'Introduction to programming course authorized by the University of Edinburgh.',
         },
     ],
     ja: [
@@ -215,12 +215,12 @@ export const experienceData = {
         location: 'Miyazaki, Japan',
         period: '4 months intensive program',
         description:
-            'Completed an intensive software development training program at a leading tech hub, gaining hands-on experience, agile methodologies, and collaborative software engineering. Worked alongside Japanese teams on projects.',
+            'Completed an intensive software development training program at a leading tech hub, gaining hands-on experience, agile methodologies, and collaborative software engineering. Collaborated closely with local Japanese development teams on modernization projects.',
         highlights: [
-            'Modernization',
-            'Legacy programming languages',
-            'CI/CD pipeline management',
-            'Cross-cultural team collaboration',
+            'Legacy Systems Modernization',
+            'Enterprise CI/CD Pipelines',
+            'Cross-cultural Teamwork',
+            'AOTS Technical Training Completion',
         ],
         stats: [
             { number: '4', label: 'Months' },
@@ -235,7 +235,7 @@ export const experienceData = {
         location: '宮崎県、日本',
         period: '4ヶ月間の集中プログラム',
         description:
-            '主要なテックハブにて集中的なソフトウェア開発研修プログラムを修了。実践的なスキル・アジャイル手法・協調的なソフトウェアエンジニアリングを習得し、日本のチームとともにプロジェクトに取り組みました。',
+            '日本国内のIT研修機関にてソフトウェア開発研修プログラムを修了。アジャイル開発手法やチーム開発を実践し、日本側エンジニアと連携しながらシステム開発に取り組みました。',
         highlights: [
             'システムモダナイゼーション',
             'レガシー言語対応',

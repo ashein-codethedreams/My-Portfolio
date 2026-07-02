@@ -30,8 +30,7 @@ export default function About() {
                                     width={340}
                                     height={400}
                                     className={styles.profilePhoto}
-                                    loading="lazy"
-                                    priority={false}
+                                    priority
                                 />
                             </div>
                             {/* Floating availability badge */}
