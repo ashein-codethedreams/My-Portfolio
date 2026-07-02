@@ -106,11 +106,10 @@ export default function CodeMockup() {
                             <pre className={styles.codeContent}>
                                 <code>
                                     &#123;{'\n'}
-                                    {'    '}<span className={styles.attr}>"currentCompany"</span>: <span className={styles.string}>"Global Innovation Consulting (GIC)"</span>,{'\n'}
-                                    {'    '}<span className={styles.attr}>"status"</span>: <span className={styles.string}>"Full-time IT Programmer"</span>,{'\n'}
-                                    {'    '}<span className={styles.attr}>"locations"</span>: [<span className={styles.string}>"Tokyo, Japan"</span>, <span className={styles.string}>"Yangon"</span>],{'\n'}
+                                    {'    '}<span className={styles.attr}>"status"</span>: <span className={styles.string}>"Freelance & Studying"</span>,{'\n'}
+                                    {'    '}<span className={styles.attr}>"locations"</span>: [<span className={styles.string}>"Yangon"</span>, <span className={styles.string}>"Remote"</span>],{'\n'}
                                     {'    '}<span className={styles.attr}>"milestones"</span>: &#123;{'\n'}
-                                    {'        '}<span className={styles.attr}>"2025"</span>: <span className={styles.string}>"AOTS Onsite Japan Training (Miyazaki)"</span>,{'\n'}
+                                    {'        '}<span className={styles.attr}>"2025-2026"</span>: <span className={styles.string}>"IT Programmer at GIC (Japan/Yangon)"</span>,{'\n'}
                                     {'        '}<span className={styles.attr}>"2023-2024"</span>: <span className={styles.string}>"Digital Base React Developer"</span>{'\n'}
                                     {'    '}&#125;{'\n'}
                                     &#125;
