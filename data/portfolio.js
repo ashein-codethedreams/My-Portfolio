@@ -1,6 +1,5 @@
-// ============================================================
-//  BILINGUAL PORTFOLIO DATA  (en = English, ja = Japanese)
-// ============================================================
+// Bilingual portfolio content (English & Japanese)
+
 
 export const navLinks = {
     en: [
@@ -300,7 +299,7 @@ export const experienceData = {
             description: 'Owned client-side modular architectures and frontend system integrations for high-performance applications.',
             highlights: [
                 'Engineered key LMS elements, including an automated exam evaluation engine and dynamic PDF certificate generation.',
-                'Built fully responsive layouts and order workflows for panoramyanmar.com online bookstore.',
+                'Built fully responsive layouts and order workflows for an online bookstore.',
                 'Packaged an e-commerce dashboard as a cross-platform desktop tool using Electron.js with Excel reporting.'
             ]
         }
@@ -338,7 +337,7 @@ export const experienceData = {
             description: '専任フロントエンドデベロッパーとして、システム基本設計・API連携・ステート管理等を担当。',
             highlights: [
                 '学習管理システム(LMS)において、テスト自動評価エンジンと動的なPDF修了証書生成機能を開発。',
-                'オンライン書店(panoramyanmar.com)のカート設計、チェックアウトフローおよびレスポンシブデザインの実装。',
+                'オンライン書店のカート設計、チェックアウトフローおよびレスポンシブデザインの実装。',
                 'Electron、Chart.js、Excel出力モジュールを用い、店舗オーナー向け店舗管理ダッシュボードアプリをパッケージ開発。'
             ]
         }
@@ -413,7 +412,7 @@ export const projects = {
             title: 'Learning Management System (LMS)',
             description: 'A comprehensive platform for course, user, and content management, featuring a dedicated admin portal, automated exam evaluation, and dynamic certification issuance.',
             tags: ['React', 'Next.js', 'Redux', 'REST API'],
-            github: 'https://github.com/ashein-codethedreams',
+            github: '#',
             live: '#',
             icon: 'fas fa-graduation-cap'
         },
@@ -421,15 +420,15 @@ export const projects = {
             title: 'Online Book Shop',
             description: 'A fully responsive online bookstore with an interactive catalog, search system, shopping cart manager, and integrated order handling.',
             tags: ['React', 'CSS Modules', 'Responsive Layout'],
-            github: 'https://github.com/ashein-codethedreams',
-            live: 'https://panoramyanmar.com',
+            github: '#',
+            live: '#',
             icon: 'fas fa-book'
         },
         {
             title: 'HR Administration System',
             description: 'Internal enterprise portal for employee and department organization, automated payroll calculation, and interactive event calendar module.',
             tags: ['React', 'Next.js', 'State Management'],
-            github: 'https://github.com/ashein-codethedreams',
+            github: '#',
             live: '#',
             icon: 'fas fa-users-cog'
         },
@@ -437,7 +436,7 @@ export const projects = {
             title: 'E-commerce Admin Portal',
             description: 'A packaged cross-platform desktop management application featuring bulk processing tools, analytical charts, and automated Excel reporting systems.',
             tags: ['Electron.js', 'React', 'Chart.js', 'Excel Export'],
-            github: 'https://github.com/ashein-codethedreams',
+            github: '#',
             live: '#',
             icon: 'fas fa-store'
         }
@@ -447,23 +446,23 @@ export const projects = {
             title: '学習管理システム (LMS)',
             description: 'コース・ユーザー・教材コンテンツ管理を統合した学習プラットフォーム。専用管理者ポータル、テストの自動評価システム、証明書の動的PDF生成機能を実装。',
             tags: ['React', 'Next.js', 'Redux', 'REST API'],
-            github: 'https://github.com/ashein-codethedreams',
+            github: '#',
             live: '#',
             icon: 'fas fa-graduation-cap'
         },
         {
-            title: 'オンライン書店 (パノラマミャンマー)',
+            title: 'オンライン書店',
             description: 'インタラクティブな書籍検索、カート管理、注文処理フローを実装した、完全モバイルレスポンシブ対応のオンライン書店ECサイト。',
             tags: ['React', 'CSS Modules', 'モバイルレスポンシブ'],
-            github: 'https://github.com/ashein-codethedreams',
-            live: 'https://panoramyanmar.com',
+            github: '#',
+            live: '#',
             icon: 'fas fa-book'
         },
         {
             title: '人事労務管理システム',
             description: '社員・部署等の組織データ管理、月次給与計算の自動化、社内アナウンス・カレンダー表示を統合した社内向け管理ポータルサイト。',
             tags: ['React', 'Next.js', 'ステート管理'],
-            github: 'https://github.com/ashein-codethedreams',
+            github: '#',
             live: '#',
             icon: 'fas fa-users-cog'
         },
@@ -471,7 +470,7 @@ export const projects = {
             title: 'Eコマースデスクトップ管理ツール',
             description: 'Electronを用いてデスクトップアプリ化された店舗用管理ポータル。大量データの一括バッチ処理、売上チャート、Excel出力によるレポート機能を搭載。',
             tags: ['Electron.js', 'React', 'Chart.js', 'Excel出力'],
-            github: 'https://github.com/ashein-codethedreams',
+            github: '#',
             live: '#',
             icon: 'fas fa-store'
         }

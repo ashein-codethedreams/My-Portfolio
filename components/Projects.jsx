@@ -41,15 +41,17 @@ function ProjectCard({ project }) {
                     <i className={project.icon}></i>
                 </div>
                 <div className={styles.projectActions}>
-                    <a 
-                        href={project.github} 
-                        className={styles.projectLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        aria-label="View source code"
-                    >
-                        <i className="fab fa-github"></i>
-                    </a>
+                    {project.github && project.github !== '#' && (
+                        <a 
+                            href={project.github} 
+                            className={styles.projectLink} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            aria-label="View source code"
+                        >
+                            <i className="fab fa-github"></i>
+                        </a>
+                    )}
                     {hasLiveLink && (
                         <a 
                             href={project.live} 

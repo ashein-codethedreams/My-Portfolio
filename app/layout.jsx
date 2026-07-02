@@ -45,17 +45,14 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
-                {/* Anti-FOUC: runs synchronously before first paint, sets theme + lang from localStorage */}
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `(function(){try{var t=localStorage.getItem('portfolio-theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('portfolio-lang')||'en';document.documentElement.setAttribute('data-lang',l);}catch(e){}})();`,
                     }}
                 />
                 
-                {/* Manual Brand Favicon Icon Link */}
                 <link rel="icon" type="image/png" href="/icon.png" />
                 
-                {/* Manual Open Graph Meta Tags (Scraper Fallbacks) */}
                 <meta property="og:title" content="Aye Myat Mon | Frontend Software Developer - Portfolio" />
                 <meta property="og:description" content="Explore the portfolio of Aye Myat Mon, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes." />
                 <meta property="og:image" content="https://portfolio.enttnine.online/og-image.png" />
@@ -63,7 +60,6 @@ export default function RootLayout({ children }) {
                 <meta property="og:image:height" content="630" />
                 <meta property="og:type" content="website" />
                 
-                {/* Manual Twitter Meta Tags */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Aye Myat Mon | Frontend Software Developer - Portfolio" />
                 <meta name="twitter:description" content="Explore the portfolio of Aye Myat Mon, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes." />

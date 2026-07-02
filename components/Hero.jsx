@@ -13,7 +13,7 @@ export default function Hero() {
 
     const t = heroData[lang] ?? heroData.en;
 
-    // Spotlight cursor tracking listener (High-performance direct DOM manipulation)
+    // Spotlight cursor tracking
     useEffect(() => {
         const handleMouseMove = (e) => {
             if (!heroRef.current) return;
@@ -35,7 +35,7 @@ export default function Hero() {
         };
     }, []);
 
-    // Infinite cycling typewriter loop (bilingually matching arrays)
+    // Typewriter effect
     useEffect(() => {
         const roles = lang === 'ja'
             ? ["フロントエンドエンジニア", "React・Next.jsスペシャリスト", "バイリンガルITプログラマー"]
