@@ -6,6 +6,7 @@ export const navLinks = {
     en: [
         { href: '#home', label: 'Home' },
         { href: '#about', label: 'About' },
+        { href: '#projects', label: 'Projects' },
         { href: '#skills', label: 'Skills' },
         { href: '#certificates', label: 'Certificates' },
         { href: '#experience', label: 'Experience' },
@@ -14,6 +15,7 @@ export const navLinks = {
     ja: [
         { href: '#home', label: 'ホーム' },
         { href: '#about', label: '自己紹介' },
+        { href: '#projects', label: 'プロジェクト' },
         { href: '#skills', label: 'スキル' },
         { href: '#certificates', label: '資格・証明書' },
         { href: '#experience', label: '経験' },
@@ -36,8 +38,8 @@ export const heroData = {
             'I craft beautiful, responsive and user-friendly web applications with modern technologies. Passionate about clean code, performance optimization, and creating delightful user experiences.',
         cta: {
             contact: 'Get In Touch',
-            cv: 'Download CV',
-            cvFile: '/assets/Resume_AyeMyatMon.pdf',
+            cv: 'View Resume',
+            cvFile: '/assets/Resume_AyeMyatMon_EN.html',
         },
     },
     ja: {
@@ -47,8 +49,8 @@ export const heroData = {
             'モダンな技術を用いて、美しくレスポンシブなWebアプリケーションを開発しています。クリーンなコード・パフォーマンス最適化・優れたユーザー体験の創出に情熱を注いでいます。',
         cta: {
             contact: 'お問い合わせ',
-            cv: '履歴書DL',
-            cvFile: '/assets/Resume_AyeMyatMon.pdf',
+            cv: '履歴書を表示',
+            cvFile: '/assets/Resume_AyeMyatMon_JP.html',
         },
     },
 };
@@ -288,6 +290,7 @@ export const footerData = {
         quickLinks: [
             { href: '#home', label: 'Home' },
             { href: '#about', label: 'About' },
+            { href: '#projects', label: 'Projects' },
             { href: '#contact', label: 'Contact' },
         ],
         connect: 'Connect',
@@ -299,10 +302,86 @@ export const footerData = {
         quickLinks: [
             { href: '#home', label: 'ホーム' },
             { href: '#about', label: '自己紹介' },
+            { href: '#projects', label: 'プロジェクト' },
             { href: '#contact', label: 'お問い合わせ' },
         ],
         connect: 'SNS',
         quickLinksLabel: 'クイックリンク',
-        copyright: (year) => `© ${year} エーミャッモン. All rights reserved.`,
+        copyright: (year) => `© ${year} Aye Myat Mon. All rights reserved.`,
     },
+};
+
+export const projects = {
+    sectionHeader: {
+        en: { subtitle: 'My Works', title: 'Featured Projects' },
+        ja: { subtitle: '制作実績', title: '主要開発実績' },
+    },
+    en: [
+        {
+            title: 'Learning Management System (LMS)',
+            description: 'A comprehensive platform for course, user, and content management, featuring a dedicated admin portal, automated exam evaluation, and dynamic certification issuance.',
+            tags: ['React', 'Next.js', 'Redux', 'REST API'],
+            github: 'https://github.com/ashein-codethedreams',
+            live: '#',
+            icon: 'fas fa-graduation-cap'
+        },
+        {
+            title: 'Online Book Shop',
+            description: 'A fully responsive online bookstore with an interactive catalog, search system, shopping cart manager, and integrated order handling.',
+            tags: ['React', 'CSS Modules', 'Responsive Layout'],
+            github: 'https://github.com/ashein-codethedreams',
+            live: 'https://panoramyanmar.com',
+            icon: 'fas fa-book'
+        },
+        {
+            title: 'HR Administration System',
+            description: 'Internal enterprise portal for employee and department organization, automated payroll calculation, and interactive event calendar module.',
+            tags: ['React', 'Next.js', 'State Management'],
+            github: 'https://github.com/ashein-codethedreams',
+            live: '#',
+            icon: 'fas fa-users-cog'
+        },
+        {
+            title: 'E-commerce Admin Portal',
+            description: 'A packaged cross-platform desktop management application featuring bulk processing tools, analytical charts, and automated Excel reporting systems.',
+            tags: ['Electron.js', 'React', 'Chart.js', 'Excel Export'],
+            github: 'https://github.com/ashein-codethedreams',
+            live: '#',
+            icon: 'fas fa-store'
+        }
+    ],
+    ja: [
+        {
+            title: '学習管理システム (LMS)',
+            description: 'コース・ユーザー・教材コンテンツ管理を統合した学習プラットフォーム。専用管理者ポータル、テストの自動評価システム、証明書の動的PDF生成機能を実装。',
+            tags: ['React', 'Next.js', 'Redux', 'REST API'],
+            github: 'https://github.com/ashein-codethedreams',
+            live: '#',
+            icon: 'fas fa-graduation-cap'
+        },
+        {
+            title: 'オンライン書店 (パノラマミャンマー)',
+            description: 'インタラクティブな書籍検索、カート管理、注文処理フローを実装した、完全モバイルレスポンシブ対応のオンライン書店ECサイト。',
+            tags: ['React', 'CSS Modules', 'モバイルレスポンシブ'],
+            github: 'https://github.com/ashein-codethedreams',
+            live: 'https://panoramyanmar.com',
+            icon: 'fas fa-book'
+        },
+        {
+            title: '人事労務管理システム',
+            description: '社員・部署等の組織データ管理、月次給与計算の自動化、社内アナウンス・カレンダー表示を統合した社内向け管理ポータルサイト。',
+            tags: ['React', 'Next.js', 'ステート管理'],
+            github: 'https://github.com/ashein-codethedreams',
+            live: '#',
+            icon: 'fas fa-users-cog'
+        },
+        {
+            title: 'Eコマースデスクトップ管理ツール',
+            description: 'Electronを用いてデスクトップアプリ化された店舗用管理ポータル。大量データの一括バッチ処理、売上チャート、Excel出力によるレポート機能を搭載。',
+            tags: ['Electron.js', 'React', 'Chart.js', 'Excel出力'],
+            github: 'https://github.com/ashein-codethedreams',
+            live: '#',
+            icon: 'fas fa-store'
+        }
+    ]
 };

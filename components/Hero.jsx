@@ -64,8 +64,13 @@ export default function Hero() {
                         >
                             <i className="fas fa-paper-plane"></i> {t.cta.contact}
                         </a>
-                        <a href={t.cta.cvFile} className="btn btn-outline">
-                            <i className="fas fa-download"></i> {t.cta.cv}
+                        <a 
+                            href={t.cta.cvFile} 
+                            className="btn btn-outline" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                            <i className="far fa-file-alt"></i> {t.cta.cv}
                         </a>
                     </div>
                     <div className={styles.heroSocials}>
