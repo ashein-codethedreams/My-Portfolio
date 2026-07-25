@@ -23,8 +23,8 @@ export default function CodeMockup() {
                 </div>
                 <div className={styles.tabContainer}>
                     {files.map(file => (
-                        <div 
-                            key={file.name} 
+                        <div
+                            key={file.name}
                             className={`${styles.tab} ${activeFile === file.name ? styles.activeTab : ''}`}
                             onClick={() => setActiveFile(file.name)}
                         >
@@ -42,8 +42,8 @@ export default function CodeMockup() {
                     <div className={styles.sidebarTitle}>EXPLORER</div>
                     <ul className={styles.fileList}>
                         {files.map(file => (
-                            <li 
-                                key={file.name} 
+                            <li
+                                key={file.name}
                                 className={`${styles.fileItem} ${activeFile === file.name ? styles.activeFile : ''}`}
                                 onClick={() => setActiveFile(file.name)}
                             >
@@ -61,7 +61,7 @@ export default function CodeMockup() {
                             <span key={i}>{i + 1}</span>
                         ))}
                     </div>
-                    
+
                     <div className={styles.codeViewport}>
                         {activeFile === 'Developer.jsx' && (
                             <pre className={styles.codeContent}>
@@ -109,7 +109,7 @@ export default function CodeMockup() {
                                     {'    '}<span className={styles.attr}>"status"</span>: <span className={styles.string}>"Freelance & Studying"</span>,{'\n'}
                                     {'    '}<span className={styles.attr}>"locations"</span>: [<span className={styles.string}>"Yangon"</span>, <span className={styles.string}>"Remote"</span>],{'\n'}
                                     {'    '}<span className={styles.attr}>"milestones"</span>: &#123;{'\n'}
-                                    {'        '}<span className={styles.attr}>"2025-2026"</span>: <span className={styles.string}>"IT Programmer at GIC (Japan/Yangon)"</span>,{'\n'}
+                                    {'        '}<span className={styles.attr}>"2025-2026"</span>: <span className={styles.string}>"IT Programmer at GIC"</span>,{'\n'}
                                     {'        '}<span className={styles.attr}>"2023-2024"</span>: <span className={styles.string}>"Digital Base React Developer"</span>{'\n'}
                                     {'    '}&#125;{'\n'}
                                     &#125;

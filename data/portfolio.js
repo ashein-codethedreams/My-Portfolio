@@ -161,7 +161,7 @@ export const certificates = {
         {
             icon: 'fas fa-laptop-code',
             title: 'Fundamental Information Technology Engineer (FE)',
-            issuer: 'Myanmar Computer Professionals Association (MCPA) / ITPEC',
+            issuer: 'Myanmar Computer Federation (MCF) / ITPEC',
             year: '2026',
             description: 'National IT engineer standard exam in Asian regions (ITPEC) verifying fundamental knowledge of software engineering, algorithms, and system design.',
         },
@@ -205,7 +205,7 @@ export const certificates = {
         {
             icon: 'fas fa-laptop-code',
             title: '基本情報技術者試験 (FE)',
-            issuer: 'ミャンマーコンピュータプロフェッショナル協会 (MCPA) / ITPEC',
+            issuer: 'ミャンマーコンピュータフェデレーション (MCF) / ITPEC',
             year: '2026年',
             description: 'アジア共通統一試験（ITPEC）における、ソフトウェアエンジニアリング、アルゴリズム、システム設計の基礎能力を証明する国家試験。',
         },
@@ -270,7 +270,7 @@ export const experienceData = {
         {
             company: 'Global Innovation Consulting (GIC) Inc.',
             role: 'IT Programmer',
-            location: 'Tokyo, Japan / Yangon, Myanmar',
+            location: 'Yangon, Myanmar',
             period: 'Jan 2025 – Feb 2026',
             description: 'Developed and modernized client-facing web portals, ensuring top-tier code quality and integration.',
             highlights: [
@@ -294,7 +294,7 @@ export const experienceData = {
         {
             company: 'Digital Base IT Company',
             role: 'React Developer',
-            location: 'Yangon, Myanmar',
+            location: 'Mandalay, Myanmar / Yangon, Myanmar',
             period: 'Feb 2023 – Dec 2024',
             description: 'Owned client-side modular architectures and frontend system integrations for high-performance applications.',
             highlights: [
