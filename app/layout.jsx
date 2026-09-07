@@ -43,11 +43,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang="ja" suppressHydrationWarning>
             <head>
                 <script
                     dangerouslySetInnerHTML={{
-                        __html: `(function(){try{var t=localStorage.getItem('portfolio-theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('portfolio-lang')||'en';document.documentElement.setAttribute('data-lang',l);}catch(e){}})();`,
+                        __html: `(function(){try{var t=localStorage.getItem('portfolio-theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('portfolio-lang')||'ja';document.documentElement.setAttribute('data-lang',l);}catch(e){}})();`,
                     }}
                 />
                 

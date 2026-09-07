@@ -5,17 +5,17 @@ import { createContext, useContext, useState, useEffect, useCallback } from 'rea
 const STORAGE_KEY = 'portfolio-lang';
 
 const LanguageContext = createContext({
-    lang: 'en',
+    lang: 'ja',
     toggleLang: () => {},
     mounted: false,
 });
 
 export function LanguageProvider({ children }) {
-    const [lang, setLang] = useState('en');
+    const [lang, setLang] = useState('ja');
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        const saved = localStorage.getItem(STORAGE_KEY) ?? 'en';
+        const saved = localStorage.getItem(STORAGE_KEY) ?? 'ja';
         setLang(saved);
         document.documentElement.setAttribute('data-lang', saved);
         setMounted(true);
