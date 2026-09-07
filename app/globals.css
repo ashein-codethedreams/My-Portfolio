@@ -2,10 +2,10 @@
    CSS CUSTOM PROPERTIES
    ============================ */
 :root {
-  --primary-start: #c8f542;
-  --primary-end: #c8f542;
+  --primary-start: #9dca78;
+  --primary-end: #9dca78;
   --primary-gradient: linear-gradient(135deg, var(--primary-start), var(--primary-end));
-  --primary-gradient-hover: linear-gradient(135deg, #b1dc32, #b1dc32);
+  --primary-gradient-hover: linear-gradient(135deg, #86b261, #86b261);
 
   --bg-primary: #f2f0e9;
   --bg-secondary: #e7e5de;
@@ -24,7 +24,7 @@
   --shadow-sm: 0 2px 10px rgba(11, 17, 26, 0.08);
   --shadow-md: 0 8px 24px rgba(11, 17, 26, 0.12);
   --shadow-lg: 0 16px 48px rgba(11, 17, 26, 0.16);
-  --shadow-glow: 0 5px 30px rgba(200, 245, 66, 0.25);
+  --shadow-glow: 0 5px 30px rgba(157, 202, 120, 0.24);
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -60,7 +60,7 @@
   --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 5px 30px rgba(200, 245, 66, 0.22);
+  --shadow-glow: 0 5px 30px rgba(157, 202, 120, 0.2);
 }
 
 /* ============================
