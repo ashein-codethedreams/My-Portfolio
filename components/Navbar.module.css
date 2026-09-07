@@ -173,19 +173,20 @@
     .navMenu {
         position: fixed;
         top: 0;
-        right: -100%;
-        width: 280px;
+        right: 0;
+        width: min(280px, 100vw);
         height: 100vh;
         flex-direction: column;
         background: var(--bg-primary);
         padding: 100px 32px 40px;
         box-shadow: var(--shadow-lg);
-        transition: right var(--transition-base), background var(--transition-theme);
+        transform: translateX(100%);
+        transition: transform var(--transition-base), background var(--transition-theme);
         gap: 4px;
     }
 
     .navMenu.active {
-        right: 0;
+        transform: translateX(0);
     }
 
     .navLink {
