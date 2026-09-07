@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import styles from './About.module.css';
 import SectionHeader from './SectionHeader';
-import { aboutData } from '@/data/portfolio';
+import { aboutData, heroData } from '@/data/portfolio';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { useLanguage } from '@/hooks/useLanguage';
 
@@ -26,7 +26,7 @@ export default function About() {
                             <div className={styles.profilePhotoInner}>
                                 <Image
                                     src="/assets/MyPhoto.jpg"
-                                    alt="Aye Myat Mon – Frontend Developer"
+                                    alt={`${heroData.name[lang] ?? heroData.name.en} – Frontend Developer`}
                                     width={340}
                                     height={400}
                                     className={styles.profilePhoto}

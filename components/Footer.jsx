@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './Footer.module.css';
-import { footerData } from '@/data/portfolio';
+import { footerData, heroData } from '@/data/portfolio';
 import { useLanguage } from '@/hooks/useLanguage';
 
 export default function Footer() {
@@ -59,7 +59,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className={styles.footerBottom}>
-                    <p>{t.copyright(new Date().getFullYear())}</p>
+                        <p>{t.copyright(new Date().getFullYear(), heroData.name[lang] ?? heroData.name.en)}</p>
                 </div>
             </div>
         </footer>

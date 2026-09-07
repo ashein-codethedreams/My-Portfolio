@@ -96,7 +96,7 @@ export default function Hero() {
                     <p className={styles.heroGreeting}>
                         <span className={styles.wave}>👋</span> {t.greeting}
                     </p>
-                    <h1 className={styles.heroName}>{heroData.name}</h1>
+                    <h1 className={styles.heroName}>{heroData.name[lang] ?? heroData.name.en}</h1>
                     <p className={`${styles.heroTitle} ${styles.typing}`}>
                         <span className={styles.typingText}>{typedText}</span>
                         <span className={styles.mobileTitle}>
