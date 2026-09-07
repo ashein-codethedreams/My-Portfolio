@@ -93,6 +93,9 @@ export default function Hero() {
             <div className={styles.spotlight}></div>
             <div className={`container ${styles.heroContainer}`}>
                 <div className={styles.heroContent}>
+                    <p className={styles.heroEyebrow}>
+                        <span>01</span> {lang === 'ja' ? 'フロントエンド開発' : 'FRONTEND DEVELOPMENT'}
+                    </p>
                     <p className={styles.heroGreeting}>
                         <span className={styles.wave}>👋</span> {t.greeting}
                     </p>
@@ -135,6 +138,10 @@ export default function Hero() {
                                 <i className={social.icon}></i>
                             </a>
                         ))}
+                    </div>
+                    <div className={styles.heroMeta}>
+                        <span>{lang === 'ja' ? '現在' : 'STATUS'}</span>
+                        <strong>{lang === 'ja' ? '新しい機会にオープン' : 'OPEN TO OPPORTUNITIES'}</strong>
                     </div>
                 </div>
                 <div className={styles.heroImage}>

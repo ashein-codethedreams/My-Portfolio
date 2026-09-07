@@ -5,15 +5,13 @@
     right: 0;
     height: var(--nav-height);
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: var(--bg-primary);
     border-bottom: 1px solid var(--border-color);
     transition: all var(--transition-base), background var(--transition-theme), border-color var(--transition-theme);
 }
 
 [data-theme="dark"] .navbar {
-    background: rgba(11, 17, 32, 0.92);
+    background: rgba(11, 17, 26, 0.94);
 }
 
 .scrolled {
@@ -39,9 +37,11 @@
 
 .navLink {
     padding: 8px 16px;
-    border-radius: var(--radius-full);
+    border-radius: 2px;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     color: var(--text-body);
     transition: all var(--transition-fast);
     position: relative;
@@ -49,8 +49,8 @@
 
 .navLink:hover,
 .activeLink {
-    color: var(--primary-start);
-    background: rgba(108, 99, 255, 0.08);
+    color: var(--text-heading);
+    background: var(--primary-start);
 }
 
 .hamburger {
@@ -70,7 +70,7 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    border-radius: var(--radius-full);
+    border-radius: 2px;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     cursor: pointer;
@@ -81,11 +81,11 @@
 }
 
 .themeToggle:hover {
-    background: var(--primary-gradient);
-    color: #ffffff;
+    background: var(--primary-start);
+    color: var(--bg-dark);
     border-color: transparent;
-    transform: scale(1.1);
-    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 0 var(--text-heading);
 }
 
 .themeToggleIcon {
@@ -108,7 +108,7 @@
     display: flex;
     align-items: center;
     height: 34px;
-    border-radius: var(--radius-full);
+    border-radius: 2px;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     overflow: hidden;
@@ -135,9 +135,9 @@
 }
 
 .langSegment.active {
-    background: var(--primary-gradient);
-    color: #ffffff;
-    border-radius: var(--radius-full);
+    background: var(--primary-start);
+    color: var(--bg-dark);
+    border-radius: 1px;
     box-shadow: var(--shadow-glow);
 }
 
