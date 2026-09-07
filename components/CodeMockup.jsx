@@ -2,9 +2,13 @@
 
 import { useState } from 'react';
 import styles from './CodeMockup.module.css';
+import { heroData } from '@/data/portfolio';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export default function CodeMockup() {
     const [activeFile, setActiveFile] = useState('Developer.jsx');
+    const { lang } = useLanguage();
+    const name = heroData.name[lang] ?? heroData.name.en;
 
     const files = [
         { name: 'Developer.jsx', icon: 'fab fa-react', color: '#61dafb' },
@@ -71,7 +75,7 @@ export default function CodeMockup() {
                                     <span className={styles.keyword}>const</span> <span className={styles.function}>Developer</span> = () =&gt; &#123;{'\n'}
                                     {'    '}<span className={styles.keyword}>return</span> ({'\n'}
                                     {'        '}&lt;<span className={styles.tag}>Profile</span>{'\n'}
-                                    {'            '}<span className={styles.attr}>name</span>=<span className={styles.string}>"Aye Myat Mon"</span>{'\n'}
+                                    {'            '}<span className={styles.attr}>name</span>=<span className={styles.string}>"{name}"</span>{'\n'}
                                     {'            '}<span className={styles.attr}>role</span>=<span className={styles.string}>"Frontend Developer"</span>{'\n'}
                                     {'            '}<span className={styles.attr}>experience</span>=<span className={styles.string}>"3+ Years"</span>{'\n'}
                                     {'            '}<span className={styles.attr}>languages</span>=&#123;[<span className={styles.string}>"English"</span>, <span className={styles.string}>"Japanese"</span>]&#125;{'\n'}

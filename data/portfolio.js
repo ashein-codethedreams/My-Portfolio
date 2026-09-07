@@ -23,7 +23,10 @@ export const navLinks = {
 };
 
 export const heroData = {
-    name: 'Aye Myat Mon',
+    name: {
+        en: 'Aye Myat Mon',
+        ja: 'エーミャッモン',
+    },
     image: '/images/hero-illustration.png',
     socials: [
         { href: 'https://github.com/ashein-codethedreams', icon: 'fab fa-github', label: 'GitHub' },
@@ -386,7 +389,7 @@ export const footerData = {
         ],
         connect: 'Connect',
         quickLinksLabel: 'Quick Links',
-        copyright: (year) => `© ${year} Aye Myat Mon. All rights reserved.`,
+        copyright: (year, name) => `© ${year} ${name}. All rights reserved.`,
     },
     ja: {
         tagline: '一ピクセルずつ、美しいWeb体験を築いています。',
@@ -398,7 +401,7 @@ export const footerData = {
         ],
         connect: 'SNS',
         quickLinksLabel: 'クイックリンク',
-        copyright: (year) => `© ${year} Aye Myat Mon. All rights reserved.`,
+        copyright: (year, name) => `© ${year} ${name}. All rights reserved.`,
     },
 };
 

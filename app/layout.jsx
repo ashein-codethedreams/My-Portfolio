@@ -16,12 +16,12 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata = {
-    title: 'Aye Myat Mon | Frontend Software Developer - Portfolio',
+    title: 'エーミャッモン | Frontend Software Developer - Portfolio',
     description:
-        'Portfolio of Aye Myat Mon, a passionate Frontend Software Developer specializing in React, Next.js, and modern web technologies.',
+        'Portfolio of エーミャッモン, a passionate Frontend Software Developer specializing in React, Next.js, and modern web technologies.',
     openGraph: {
-        title: 'Aye Myat Mon | Frontend Software Developer - Portfolio',
-        description: 'Explore the portfolio of Aye Myat Mon, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes.',
+        title: 'エーミャッモン | Frontend Software Developer - Portfolio',
+        description: 'Explore the portfolio of エーミャッモン, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes.',
         type: 'website',
         locale: 'en_US',
         images: [
@@ -29,14 +29,14 @@ export const metadata = {
                 url: 'https://portfolio.enttnine.online/og-image.png',
                 width: 1200,
                 height: 630,
-                alt: 'Aye Myat Mon | Frontend Software Developer Portfolio',
+                alt: 'エーミャッモン | Frontend Software Developer Portfolio',
             }
         ]
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Aye Myat Mon | Frontend Software Developer - Portfolio',
-        description: 'Explore the portfolio of Aye Myat Mon, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes.',
+        title: 'エーミャッモン | Frontend Software Developer - Portfolio',
+        description: 'Explore the portfolio of エーミャッモン, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes.',
         images: ['https://portfolio.enttnine.online/og-image.png'],
     }
 };
@@ -53,16 +53,16 @@ export default function RootLayout({ children }) {
                 
                 <link rel="icon" type="image/png" href="/icon.png" />
                 
-                <meta property="og:title" content="Aye Myat Mon | Frontend Software Developer - Portfolio" />
-                <meta property="og:description" content="Explore the portfolio of Aye Myat Mon, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes." />
+                <meta property="og:title" content="エーミャッモン | Frontend Software Developer - Portfolio" />
+                <meta property="og:description" content="Explore the portfolio of エーミャッモン, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes." />
                 <meta property="og:image" content="https://portfolio.enttnine.online/og-image.png" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
                 <meta property="og:type" content="website" />
                 
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Aye Myat Mon | Frontend Software Developer - Portfolio" />
-                <meta name="twitter:description" content="Explore the portfolio of Aye Myat Mon, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes." />
+                <meta name="twitter:title" content="エーミャッモン | Frontend Software Developer - Portfolio" />
+                <meta name="twitter:description" content="Explore the portfolio of エーミャッモン, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes." />
                 <meta name="twitter:image" content="https://portfolio.enttnine.online/og-image.png" />
 
                 <link
