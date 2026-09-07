@@ -98,7 +98,10 @@ export default function Hero() {
                     </p>
                     <h1 className={styles.heroName}>{heroData.name}</h1>
                     <p className={`${styles.heroTitle} ${styles.typing}`}>
-                        {typedText}
+                        <span className={styles.typingText}>{typedText}</span>
+                        <span className={styles.mobileTitle}>
+                            {lang === 'ja' ? 'フロントエンドエンジニア' : 'Frontend Software Developer'}
+                        </span>
                     </p>
                     <p className={styles.heroDescription}>
 {t.description}</p>
