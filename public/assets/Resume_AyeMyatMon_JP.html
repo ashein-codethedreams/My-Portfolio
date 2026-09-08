@@ -280,6 +280,66 @@
             font-size: 0.78rem;
         }
 
+        @media screen and (max-width: 900px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            .page {
+                width: 100%;
+                grid-template-columns: minmax(190px, 28%) minmax(0, 1fr);
+            }
+
+            aside {
+                padding: 28px 18px;
+            }
+
+            main {
+                min-width: 0;
+                padding: 30px 24px;
+            }
+
+            .contact-item,
+            .company-name,
+            .cert-name,
+            .edu-name {
+                overflow-wrap: anywhere;
+            }
+        }
+
+        @media screen and (max-width: 680px) {
+            body {
+                padding: 0;
+            }
+
+            .page {
+                display: block;
+                min-height: 0;
+            }
+
+            aside,
+            main {
+                padding: 24px 20px;
+            }
+
+            aside {
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .timeline-header,
+            .cert-item,
+            .edu-item {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .main-section-title {
+                font-size: 1rem;
+            }
+        }
+
         /* Print styles optimization */
         @media print {
             body {
