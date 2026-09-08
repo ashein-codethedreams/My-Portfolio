@@ -5,18 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>職務経歴書 - Aye Myat Mon</title>
+    <script>
+        (function () {
+            const storageKey = 'portfolio-theme';
+            const preferredTheme = () => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            const applyTheme = (theme) => document.documentElement.setAttribute('data-theme', theme || preferredTheme());
+            applyTheme(localStorage.getItem(storageKey));
+            window.addEventListener('storage', (event) => {
+                if (event.key === storageKey) applyTheme(event.newValue);
+            });
+        }());
+    </script>
     <link rel="icon" type="image/png" href="/icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --primary: #3B82F6;
-            --dark: #1E293B;
-            --text: #334155;
-            --light: #64748B;
-            --bg-aside: #F8FAFC;
-            --border: #E2E8F0;
+            --primary: #5C8D3A;
+            --dark: #11161B;
+            --text: #5E676D;
+            --light: #8F989D;
+            --bg-aside: #E7E5DE;
+            --border: rgba(17, 22, 27, 0.16);
+            --surface: #FBFAF6;
+            --page-bg: #F2F0E9;
+            --tag-bg: #FFFFFF;
+            --shadow: rgba(11, 17, 26, 0.16);
+        }
+
+        [data-theme="dark"] {
+            --primary: #9DCA78;
+            --dark: #F2F5ED;
+            --text: #A0ABB2;
+            --light: #65737D;
+            --bg-aside: #111A25;
+            --border: rgba(242, 245, 237, 0.14);
+            --surface: #121D29;
+            --page-bg: #0B111A;
+            --tag-bg: #162431;
+            --shadow: rgba(0, 0, 0, 0.5);
         }
 
         * {
@@ -30,17 +58,23 @@
             color: var(--text);
             line-height: 1.7;
             font-size: 13px;
-            background: #F1F5F9;
+            background: var(--page-bg);
+            background-image: linear-gradient(rgba(127, 152, 164, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(127, 152, 164, 0.05) 1px, transparent 1px);
+            background-size: 36px 36px;
             padding: 40px 0;
+            transition: background-color 0.35s ease, color 0.35s ease;
         }
 
         /* Page Container (A4 aspect) */
         .page {
-            background: #ffffff;
+            background: var(--surface);
             width: 210mm;
             min-height: 297mm;
             margin: 0 auto;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 16px 48px var(--shadow);
             display: grid;
             grid-template-columns: 240px 1fr;
         }
@@ -53,6 +87,16 @@
             display: flex;
             flex-direction: column;
             gap: 28px;
+        }
+
+        aside::before {
+            content: 'PROFILE.md';
+            color: var(--light);
+            font-family: monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.5px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
         }
 
         .profile-container {
@@ -86,7 +130,7 @@
         .role-badge {
             display: inline-block;
             padding: 4px 12px;
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(103, 232, 249, 0.12);
             color: var(--primary);
             border-radius: 9999px;
             font-size: 0.75rem;
@@ -146,7 +190,7 @@
         .skill-tag {
             font-size: 0.72rem;
             padding: 2px 8px;
-            background: #ffffff;
+            background: var(--tag-bg);
             border: 1px solid var(--border);
             border-radius: 4px;
             color: var(--text);
@@ -168,16 +212,32 @@
             gap: 30px;
         }
 
+        main::before {
+            content: '$ cat resume.dev';
+            color: var(--primary);
+            font-family: monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.4px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
         .main-section-title {
             font-size: 1.1rem;
             font-weight: 800;
             color: var(--dark);
+            font-family: monospace;
             display: flex;
             align-items: center;
             gap: 10px;
             border-bottom: 2px solid var(--dark);
             padding-bottom: 6px;
             margin-bottom: 16px;
+        }
+
+        .main-section-title::before {
+            content: '//';
+            color: var(--primary);
         }
 
         .main-section-title i {
@@ -342,6 +402,16 @@
 
         /* Print styles optimization */
         @media print {
+            :root {
+                --primary: #3B82F6;
+                --dark: #1E293B;
+                --text: #334155;
+                --light: #64748B;
+                --bg-aside: #F8FAFC;
+                --border: #E2E8F0;
+                --surface: #ffffff;
+            }
+
             body {
                 background: #ffffff;
                 padding: 0;
@@ -349,6 +419,8 @@
 
             .page {
                 box-shadow: none;
+                border: 0;
+                border-radius: 0;
                 margin: 0;
                 width: 210mm;
                 height: 297mm;
@@ -365,6 +437,16 @@
                 background: rgba(59, 130, 246, 0.1) !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+            }
+
+            aside::before,
+            main::before,
+            .main-section-title::before {
+                display: none;
+            }
+
+            .skill-tag {
+                background: #ffffff;
             }
         }
     </style>
