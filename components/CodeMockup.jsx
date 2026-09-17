@@ -107,16 +107,16 @@ export default function CodeMockup() {
                             </pre>
                         )}
                         {activeFile === 'Experience.json' && (
-                            <pre className={`${styles.codeContent} ${styles.experienceCode}`}>
+                            <pre className={styles.codeContent}>
                                 <code>
-                                    <span className={styles.codeLine}>&#123;</span>
-                                    <span className={styles.codeLine}><span className={styles.attr}>"status"</span>: <span className={styles.string}>"Freelance & Studying"</span>,</span>
-                                    <span className={styles.codeLine}><span className={styles.attr}>"locations"</span>: [<span className={styles.string}>"Yangon"</span>, <span className={styles.string}>"Remote"</span>],</span>
-                                    <span className={styles.codeLine}><span className={styles.attr}>"milestones"</span>: &#123;</span>
-                                    <span className={styles.codeLine}><span className={styles.attr}>"2025-2026"</span>: <span className={styles.string}>"IT Programmer at GIC"</span>,</span>
-                                    <span className={styles.codeLine}><span className={styles.attr}>"2023-2024"</span>: <span className={styles.string}>"Digital Base React Developer"</span></span>
-                                    <span className={styles.codeLine}>&#125;</span>
-                                    <span className={styles.codeLine}>&#125;</span>
+                                    &#123;{'\n'}
+                                    {'    '}<span className={styles.attr}>"status"</span>: <span className={styles.string}>"Freelance & Studying"</span>,{'\n'}
+                                    {'    '}<span className={styles.attr}>"locations"</span>: [<span className={styles.string}>"Yangon"</span>, <span className={styles.string}>"Remote"</span>],{'\n'}
+                                    {'    '}<span className={styles.attr}>"milestones"</span>: &#123;{'\n'}
+                                    {'        '}<span className={styles.attr}>"2025-2026"</span>: <span className={styles.string}>"IT Programmer at GIC"</span>,{'\n'}
+                                    {'        '}<span className={styles.attr}>"2023-2024"</span>: <span className={styles.string}>"Digital Base React Developer"</span>{'\n'}
+                                    {'    '}&#125;{'\n'}
+                                    &#125;
                                 </code>
                             </pre>
                         )}
