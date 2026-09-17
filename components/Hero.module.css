@@ -45,7 +45,8 @@
 .heroContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 96px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(40px, 6vw, 96px);
     align-items: center;
     padding: 72px 24px 88px;
 }
@@ -174,6 +175,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    min-width: 0;
     border-left: 1px solid var(--border-color);
     padding-left: 48px;
 }
@@ -232,6 +235,13 @@
 @media (max-width: 1024px) {
     .heroName {
         font-size: 3.2rem;
+    }
+    .heroContainer {
+        gap: 40px;
+    }
+
+    .heroImage {
+        padding-left: 24px;
     }
 }
 

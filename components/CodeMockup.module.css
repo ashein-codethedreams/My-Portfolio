@@ -2,6 +2,8 @@
     position: relative;
     width: 100%;
     max-width: 540px;
+    min-width: 0;
+    margin: 0 auto;
     height: 380px;
     background: rgba(13, 20, 38, 0.85);
     backdrop-filter: blur(16px);
@@ -114,7 +116,7 @@
 /* Workspace layout */
 .ideWorkspace {
     display: grid;
-    grid-template-columns: 140px 1fr;
+    grid-template-columns: 120px minmax(0, 1fr);
     flex-grow: 1;
     height: calc(100% - 40px);
 }
@@ -191,6 +193,7 @@
     display: flex;
     gap: 12px;
     overflow: auto;
+    min-width: 0;
     font-family: 'Consolas', 'Courier New', Courier, monospace;
 }
 
@@ -208,14 +211,35 @@
 .codeViewport {
     position: relative;
     flex-grow: 1;
+    min-width: 0;
 }
 
 .codeContent {
     margin: 0;
+    display: block;
+    max-width: 100%;
+    min-width: 0;
     font-size: 0.8rem;
     line-height: 1.5;
-    white-space: pre; /* Keep code format clean, no ugly mid-word wrapping */
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
     font-family: inherit;
+}
+
+.codeContent code {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.experienceCode {
+    text-indent: 0;
+    white-space: normal;
+}
+
+.codeLine {
+    display: block;
+    white-space: normal;
 }
 
 /* Text coloring theme */
@@ -331,6 +355,36 @@
     background: rgba(0, 0, 0, 0.08);
 }
 
+@media (min-width: 541px) and (max-width: 1024px) {
+    .ideHeader {
+        padding: 0 10px;
+    }
+
+    .windowControls {
+        margin-right: 10px;
+    }
+
+    .tab {
+        padding: 0 8px;
+        font-size: 0.68rem;
+    }
+
+    .editorArea {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .codeContent {
+        font-size: 0.7rem;
+        white-space: pre-line;
+    }
+
+    .experienceCode {
+        padding-left: 0;
+        text-align: left;
+    }
+}
+
 /* Mobile Media Queries */
 @media (max-width: 540px) {
     .ideContainer {
@@ -354,8 +408,16 @@
         padding: 0 4px;
         font-size: 0.65rem;
         height: 100%;
+        min-width: 0;
         border-right: 1px solid rgba(255, 255, 255, 0.05);
         border-top-width: 1.5px;
+    }
+
+    .tab span {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     
     [data-theme="light"] .tab {
@@ -382,6 +444,8 @@
     
     .codeContent {
         font-size: 0.7rem; /* Make code fonts fit perfectly */
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
     }
     
     .techBadge {

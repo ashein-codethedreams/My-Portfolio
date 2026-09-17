@@ -70,18 +70,18 @@ export default function CodeMockup() {
                         {activeFile === 'Developer.jsx' && (
                             <pre className={styles.codeContent}>
                                 <code>
-                                    <span className={styles.keyword}>import</span> <span className={styles.variable}>React</span> <span className={styles.keyword}>from</span> <span className={styles.string}>'react'</span>;<span className={styles.comment}> // UI rendering</span>{'\n'}
+                                    <span className={styles.keyword}>import</span> <span className={styles.variable}>React</span> <span className={styles.keyword}>from</span> <span className={styles.string}>'react'</span>;{'\n'}
                                     {'\n'}
                                     <span className={styles.keyword}>const</span> <span className={styles.function}>Developer</span> = () =&gt; &#123;{'\n'}
-                                    {'    '}<span className={styles.keyword}>return</span> ({'\n'}
-                                    {'        '}&lt;<span className={styles.tag}>Profile</span>{'\n'}
-                                    {'            '}<span className={styles.attr}>name</span>=<span className={styles.string}>"{name}"</span>{'\n'}
-                                    {'            '}<span className={styles.attr}>role</span>=<span className={styles.string}>"Frontend Developer"</span>{'\n'}
-                                    {'            '}<span className={styles.attr}>experience</span>=<span className={styles.string}>"3+ Years"</span>{'\n'}
-                                    {'            '}<span className={styles.attr}>languages</span>=&#123;[<span className={styles.string}>"English"</span>, <span className={styles.string}>"Japanese"</span>]&#125;{'\n'}
-                                    {'            '}<span className={styles.attr}>available</span>=&#123;<span className={styles.literal}>true</span>&#125;{'\n'}
-                                    {'        '}/&gt;{'\n'}
-                                    {'    '});{'\n'}
+                                    {'  '}<span className={styles.keyword}>return</span> ({'\n'}
+                                    {'    '}&lt;<span className={styles.tag}>Profile</span>{'\n'}
+                                    {'      '}<span className={styles.attr}>name</span>=<span className={styles.string}>"{name}"</span>{'\n'}
+                                    {'      '}<span className={styles.attr}>role</span>=<span className={styles.string}>"Frontend Developer"</span>{'\n'}
+                                    {'      '}<span className={styles.attr}>experience</span>=<span className={styles.string}>"3+ Years"</span>{'\n'}
+                                    {'      '}<span className={styles.attr}>languages</span>=&#123;[<span className={styles.string}>"English"</span>, <span className={styles.string}>"Japanese"</span>]&#125;{'\n'}
+                                    {'      '}<span className={styles.attr}>available</span>=&#123;<span className={styles.literal}>true</span>&#125;{'\n'}
+                                    {'    '}/&gt;{'\n'}
+                                    {'  '});{'\n'}
                                     &#125;;{'\n'}
                                     {'\n'}
                                     <span className={styles.keyword}>export default</span> <span className={styles.function}>Developer</span>;
@@ -107,16 +107,16 @@ export default function CodeMockup() {
                             </pre>
                         )}
                         {activeFile === 'Experience.json' && (
-                            <pre className={styles.codeContent}>
+                            <pre className={`${styles.codeContent} ${styles.experienceCode}`}>
                                 <code>
-                                    &#123;{'\n'}
-                                    {'    '}<span className={styles.attr}>"status"</span>: <span className={styles.string}>"Freelance & Studying"</span>,{'\n'}
-                                    {'    '}<span className={styles.attr}>"locations"</span>: [<span className={styles.string}>"Yangon"</span>, <span className={styles.string}>"Remote"</span>],{'\n'}
-                                    {'    '}<span className={styles.attr}>"milestones"</span>: &#123;{'\n'}
-                                    {'        '}<span className={styles.attr}>"2025-2026"</span>: <span className={styles.string}>"IT Programmer at GIC"</span>,{'\n'}
-                                    {'        '}<span className={styles.attr}>"2023-2024"</span>: <span className={styles.string}>"Digital Base React Developer"</span>{'\n'}
-                                    {'    '}&#125;{'\n'}
-                                    &#125;
+                                    <span className={styles.codeLine}>&#123;</span>
+                                    <span className={styles.codeLine}><span className={styles.attr}>"status"</span>: <span className={styles.string}>"Freelance & Studying"</span>,</span>
+                                    <span className={styles.codeLine}><span className={styles.attr}>"locations"</span>: [<span className={styles.string}>"Yangon"</span>, <span className={styles.string}>"Remote"</span>],</span>
+                                    <span className={styles.codeLine}><span className={styles.attr}>"milestones"</span>: &#123;</span>
+                                    <span className={styles.codeLine}><span className={styles.attr}>"2025-2026"</span>: <span className={styles.string}>"IT Programmer at GIC"</span>,</span>
+                                    <span className={styles.codeLine}><span className={styles.attr}>"2023-2024"</span>: <span className={styles.string}>"Digital Base React Developer"</span></span>
+                                    <span className={styles.codeLine}>&#125;</span>
+                                    <span className={styles.codeLine}>&#125;</span>
                                 </code>
                             </pre>
                         )}
