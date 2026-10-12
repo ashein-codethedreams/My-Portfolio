@@ -1,8 +1,5 @@
 .contactContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
+    max-width: 720px;
 }
 
 .contactIntro {
@@ -62,7 +59,7 @@
     align-items: center;
     gap: 10px;
     padding: 12px 24px;
-    background: linear-gradient(135deg, #10B981, #059669);
+    background: var(--success-gradient);
     color: var(--text-white);
     border-radius: var(--radius-full);
     font-size: 0.9rem;
@@ -86,70 +83,8 @@
     animation: pulse 2s infinite;
 }
 
-.contactForm {
-    background: var(--bg-card);
-    padding: 40px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-subtle);
-    transition: background var(--transition-theme);
-}
-
-.formGroup {
-    margin-bottom: 20px;
-}
-
-.formGroup label {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-heading);
-    margin-bottom: 8px;
-}
-
-.formGroup input,
-.formGroup textarea {
-    width: 100%;
-    padding: 14px 18px;
-    border: 2px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    font-family: inherit;
-    font-size: 0.95rem;
-    color: var(--text-heading);
-    transition: border-color var(--transition-fast), background var(--transition-theme), color var(--transition-theme);
-    background: var(--bg-input);
-    outline: none;
-}
-
-.formGroup input::placeholder,
-.formGroup textarea::placeholder {
-    color: var(--text-light);
-}
-
-.formGroup input:focus,
-.formGroup textarea:focus {
-    border-color: var(--primary-start);
-    background: var(--bg-card);
-}
-
-.formGroup textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.btnSent {
-    background: linear-gradient(135deg, #10B981, #059669) !important;
-}
-
 @media (max-width: 768px) {
     .contactContainer {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    .contactForm {
-        padding: 24px;
+        max-width: none;
     }
 }

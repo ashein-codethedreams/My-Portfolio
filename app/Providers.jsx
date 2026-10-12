@@ -6,9 +6,7 @@ import { LanguageProvider } from '@/hooks/useLanguage';
 export default function Providers({ children }) {
     return (
         <ThemeProvider>
-            <LanguageProvider>
-                {children}
-            </LanguageProvider>
+            <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>
     );
 }

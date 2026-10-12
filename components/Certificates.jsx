@@ -29,8 +29,8 @@ function CertificateCard({ cert }) {
     };
 
     return (
-        <div 
-            ref={ref} 
+        <div
+            ref={ref}
             className={`${styles.certificateCard} ${isVisible ? 'reveal revealed' : 'reveal'}`}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}

@@ -32,9 +32,19 @@
 }
 
 @keyframes blobSpin {
-    0%, 100% { border-radius: 44% 56% 62% 38% / 46% 40% 60% 54%; transform: rotate(0deg); }
-    33%       { border-radius: 56% 44% 38% 62% / 60% 54% 46% 40%; transform: rotate(4deg); }
-    66%       { border-radius: 38% 62% 56% 44% / 40% 60% 54% 46%; transform: rotate(-4deg); }
+    0%,
+    100% {
+        border-radius: 44% 56% 62% 38% / 46% 40% 60% 54%;
+        transform: rotate(0deg);
+    }
+    33% {
+        border-radius: 56% 44% 38% 62% / 60% 54% 46% 40%;
+        transform: rotate(4deg);
+    }
+    66% {
+        border-radius: 38% 62% 56% 44% / 40% 60% 54% 46%;
+        transform: rotate(-4deg);
+    }
 }
 
 /* Thin gradient border ring */
@@ -87,7 +97,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #10B981;
+    background: #10b981;
     flex-shrink: 0;
     position: relative;
 }
@@ -145,7 +155,8 @@
 /* ============================
    ABOUT CONTENT
    ============================ */
-.aboutContent {}
+.aboutContent {
+}
 
 .aboutText {
     font-size: 1.05rem;
@@ -170,7 +181,9 @@
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-subtle);
-    transition: all var(--transition-base), background var(--transition-theme);
+    transition:
+        all var(--transition-base),
+        background var(--transition-theme);
 }
 
 .expertiseCard:hover {

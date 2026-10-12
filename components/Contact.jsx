@@ -1,6 +1,4 @@
 'use client';
-
-import { useState } from 'react';
 import styles from './Contact.module.css';
 import SectionHeader from './SectionHeader';
 import { contactData } from '@/data/portfolio';
@@ -9,23 +7,10 @@ import { useLanguage } from '@/hooks/useLanguage';
 
 export default function Contact() {
     const [infoRef, infoVisible] = useIntersectionObserver({ threshold: 0.1 });
-    const [submitState, setSubmitState] = useState('idle');
     const { lang } = useLanguage();
 
     const t = contactData[lang] ?? contactData.en;
     const header = contactData.sectionHeader[lang] ?? contactData.sectionHeader.en;
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setSubmitState('sending');
-        setTimeout(() => {
-            setSubmitState('sent');
-            setTimeout(() => {
-                setSubmitState('idle');
-                e.target.reset();
-            }, 2500);
-        }, 1500);
-    };
 
     return (
         <section className="section section-even" id="contact">

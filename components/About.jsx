@@ -54,7 +54,9 @@ export default function About() {
                     </div>
 
                     {/* Content Column */}
-                    <div className={`${styles.aboutContent} ${isVisible ? 'reveal revealed' : 'reveal'}`}>
+                    <div
+                        className={`${styles.aboutContent} ${isVisible ? 'reveal revealed' : 'reveal'}`}
+                    >
                         {t.paragraphs.map((text, i) => (
                             <p
                                 key={i}

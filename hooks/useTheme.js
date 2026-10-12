@@ -15,12 +15,16 @@ export function ThemeProvider({ children }) {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initial = saved ?? (prefersDark ? 'dark' : 'light');
-        setTheme(initial);
-        document.documentElement.setAttribute('data-theme', initial);
-        setMounted(true);
+        const frame = window.requestAnimationFrame(() => {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initial = saved ?? (prefersDark ? 'dark' : 'light');
+            setTheme(initial);
+            document.documentElement.setAttribute('data-theme', initial);
+            setMounted(true);
+        });
+
+        return () => window.cancelAnimationFrame(frame);
     }, []);
 
     const toggleTheme = useCallback(() => {

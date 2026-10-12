@@ -30,8 +30,8 @@ function ProjectCard({ project }) {
     };
 
     return (
-        <div 
-            ref={ref} 
+        <div
+            ref={ref}
             className={`${styles.projectCard} ${isVisible ? 'reveal revealed' : 'reveal'}`}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
@@ -42,22 +42,22 @@ function ProjectCard({ project }) {
                 </div>
                 <div className={styles.projectActions}>
                     {project.github && project.github !== '#' && (
-                        <a 
-                            href={project.github} 
-                            className={styles.projectLink} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
+                        <a
+                            href={project.github}
+                            className={styles.projectLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             aria-label="View source code"
                         >
                             <i className="fab fa-github"></i>
                         </a>
                     )}
                     {hasLiveLink && (
-                        <a 
-                            href={project.live} 
-                            className={styles.projectLink} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
+                        <a
+                            href={project.live}
+                            className={styles.projectLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             aria-label="View live demo"
                         >
                             <i className="fas fa-external-link-alt"></i>
@@ -70,7 +70,9 @@ function ProjectCard({ project }) {
                 <p className={styles.projectDescription}>{project.description}</p>
                 <div className={styles.projectTags}>
                     {project.tags.map((tag) => (
-                        <span key={tag} className={styles.tag}>{tag}</span>
+                        <span key={tag} className={styles.tag}>
+                            {tag}
+                        </span>
                     ))}
                 </div>
             </div>

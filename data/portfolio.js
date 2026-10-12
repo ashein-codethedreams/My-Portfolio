@@ -1,6 +1,5 @@
 // Bilingual portfolio content (English & Japanese)
 
-
 export const navLinks = {
     en: [
         { href: '#home', label: 'Home' },
@@ -30,7 +29,11 @@ export const heroData = {
     image: '/images/hero-illustration.png',
     socials: [
         { href: 'https://github.com/ashein-codethedreams', icon: 'fab fa-github', label: 'GitHub' },
-        { href: 'https://www.linkedin.com/in/aye-myat-mon-7a9b65214/', icon: 'fab fa-linkedin-in', label: 'LinkedIn' },
+        {
+            href: 'https://www.linkedin.com/in/aye-myat-mon-7a9b65214/',
+            icon: 'fab fa-linkedin-in',
+            label: 'LinkedIn',
+        },
         { href: 'mailto:heroglasses155@gmail.com', icon: 'fas fa-envelope', label: 'Email' },
     ],
     en: {
@@ -64,19 +67,21 @@ export const aboutData = {
     },
     en: {
         paragraphs: [
-            'I\'m a dedicated Frontend Developer with <strong>3+ years of experience</strong> building modern web applications. I specialize in React, Next.js, and TypeScript, creating seamless user interfaces that combine visual appeal and high performance.',
+            "I'm a dedicated Frontend Developer with <strong>3+ years of experience</strong> building modern web applications. I specialize in React, Next.js, and TypeScript, creating seamless user interfaces that combine visual appeal and high performance.",
             'My approach combines clean code practices with creative problem-solving to deliver solutions that exceed expectations. I believe in continuous learning and staying at the forefront of web technologies.',
         ],
         expertise: [
             {
                 icon: 'fas fa-rocket',
                 title: 'Performance',
-                description: 'Optimized, fast-loading applications with excellent Core Web Vitals scores.',
+                description:
+                    'Optimized, fast-loading applications with excellent Core Web Vitals scores.',
             },
             {
                 icon: 'fas fa-users',
                 title: 'Collaboration',
-                description: 'Strong communicator who thrives in agile teams and cross-functional projects.',
+                description:
+                    'Strong communicator who thrives in agile teams and cross-functional projects.',
             },
         ],
     },
@@ -89,12 +94,14 @@ export const aboutData = {
             {
                 icon: 'fas fa-rocket',
                 title: 'パフォーマンス',
-                description: 'Core Web Vitalsに優れた、高速で最適化されたアプリケーションを構築します。',
+                description:
+                    'Core Web Vitalsに優れた、高速で最適化されたアプリケーションを構築します。',
             },
             {
                 icon: 'fas fa-users',
                 title: 'チームワーク',
-                description: 'アジャイル開発チームや多部署横断プロジェクトで力を発揮するコミュニケーターです。',
+                description:
+                    'アジャイル開発チームや多部署横断プロジェクトで力を発揮するコミュニケーターです。',
             },
         ],
     },
@@ -166,42 +173,48 @@ export const certificates = {
             title: 'Fundamental Information Technology Engineer (FE)',
             issuer: 'Myanmar Computer Federation (MCF) / ITPEC',
             year: '2026',
-            description: 'National IT engineer standard exam in Asian regions (ITPEC) verifying fundamental knowledge of software engineering, algorithms, and system design.',
+            description:
+                'National IT engineer standard exam in Asian regions (ITPEC) verifying fundamental knowledge of software engineering, algorithms, and system design.',
         },
         {
             icon: 'fas fa-language',
             title: 'Japanese Language Proficiency Test (JLPT) N3',
             issuer: 'Japan Educational Exchanges and Services / Japan Foundation',
             year: '2024',
-            description: 'Certified capability to understand Japanese used in everyday and workplace contexts.',
+            description:
+                'Certified capability to understand Japanese used in everyday and workplace contexts.',
         },
         {
             icon: 'fas fa-globe-asia',
             title: 'AOTS Technology Training Certification',
             issuer: 'The Association for Overseas Technical Cooperation (AOTS) Japan',
             year: '2025',
-            description: 'Completed onsite technical training in Miyazaki, Japan, focusing on agile development and system modernization.',
+            description:
+                'Completed onsite technical training in Miyazaki, Japan, focusing on agile development and system modernization.',
         },
         {
             icon: 'fas fa-award',
             title: 'React Developer Certification',
             issuer: 'Digital Base',
             year: '2023',
-            description: 'Awarded upon successful completion of the intensive React development internship program, leading to conversion and promotion to a full-time React Developer role.',
+            description:
+                'Awarded upon successful completion of the intensive React development internship program, leading to conversion and promotion to a full-time React Developer role.',
         },
         {
             icon: 'fas fa-certificate',
             title: 'React - The Complete Guide',
             issuer: 'Udemy',
             year: '2023',
-            description: 'Comprehensive React course including Hooks, Redux, Next.js, and React Router.',
+            description:
+                'Comprehensive React course including Hooks, Redux, Next.js, and React Router.',
         },
         {
             icon: 'fas fa-medal',
             title: 'Code Yourself! An Introduction to Programming',
             issuer: 'Coursera',
             year: '2020',
-            description: 'Introduction to programming course authorized by the University of Edinburgh.',
+            description:
+                'Introduction to programming course authorized by the University of Edinburgh.',
         },
     ],
     ja: [
@@ -210,28 +223,32 @@ export const certificates = {
             title: '基本情報技術者試験 (FE)',
             issuer: 'ミャンマーコンピュータフェデレーション (MCF) / ITPEC',
             year: '2026年',
-            description: 'アジア共通統一試験（ITPEC）における、ソフトウェアエンジニアリング、アルゴリズム、システム設計の基礎能力を証明する国家試験。',
+            description:
+                'アジア共通統一試験（ITPEC）における、ソフトウェアエンジニアリング、アルゴリズム、システム設計の基礎能力を証明する国家試験。',
         },
         {
             icon: 'fas fa-language',
             title: '日本語能力試験 (JLPT) N3',
             issuer: '国際交流基金 / 日本国際教育支援協会',
             year: '2024年',
-            description: '日常的な場面およびビジネスの現場で使われる基本的な日本語を理解できることを認定。',
+            description:
+                '日常的な場面およびビジネスの現場で使われる基本的な日本語を理解できることを認定。',
         },
         {
             icon: 'fas fa-globe-asia',
             title: 'AOTS実務技術研修修了証',
             issuer: '一般社団法人海外技術者研修協会 (AOTS)',
             year: '2025年',
-            description: '日本現地（宮崎県）にてシステムモダナイゼーション・アジャイル開発の実務者研修プログラム修了。',
+            description:
+                '日本現地（宮崎県）にてシステムモダナイゼーション・アジャイル開発の実務者研修プログラム修了。',
         },
         {
             icon: 'fas fa-award',
             title: 'Reactデベロッパー認定',
             issuer: 'Digital Base',
             year: '2023年',
-            description: '実践的React開発インターンシッププログラム修了時に授与。この実績評価により、正社員（React開発エンジニア）として登用されました。',
+            description:
+                '実践的React開発インターンシッププログラム修了時に授与。この実績評価により、正社員（React開発エンジニア）として登用されました。',
         },
         {
             icon: 'fas fa-certificate',
@@ -267,7 +284,7 @@ export const experienceData = {
             { number: '6件以上', label: '開発実績' },
             { number: '2ヶ国', label: '勤務経験国' },
             { number: 'JLPT N3', label: '日本語レベル' },
-        ]
+        ],
     },
     en: [
         {
@@ -275,37 +292,40 @@ export const experienceData = {
             role: 'IT Programmer',
             location: 'Yangon, Myanmar',
             period: 'Jan 2025 – Feb 2026',
-            description: 'Developed and modernized client-facing web portals, ensuring top-tier code quality and integration.',
+            description:
+                'Developed and modernized client-facing web portals, ensuring top-tier code quality and integration.',
             highlights: [
                 'Successfully modernized and implemented features for 4+ client-facing insurance websites using Java and Bootstrap.',
                 'Planned and performed unit and integration testing pipelines aligning with strict Japanese enterprise standards.',
-                'Collaborated in a cross-cultural environment, adapting to Japanese business workflows and methodologies.'
-            ]
+                'Collaborated in a cross-cultural environment, adapting to Japanese business workflows and methodologies.',
+            ],
         },
         {
             company: 'GIC Japan / AOTS Training Program',
             role: 'Trainee Programmer',
             location: 'Miyazaki, Japan',
             period: '2025 (4 months intensive)',
-            description: 'Selected for a specialized tech training program in Japan, focusing on modern enterprise architectures.',
+            description:
+                'Selected for a specialized tech training program in Japan, focusing on modern enterprise architectures.',
             highlights: [
                 'Studied transition pipelines for legacy codebases (COBOL, RPG, LANSA) to modern web systems.',
                 'Studied cloud deployment basics on AWS and rapid application building using GeneXus.',
-                'Experienced authentic Japanese workplace workflows and team dynamics directly.'
-            ]
+                'Experienced authentic Japanese workplace workflows and team dynamics directly.',
+            ],
         },
         {
             company: 'Digital Base IT Company',
             role: 'React Developer',
             location: 'Mandalay, Myanmar / Yangon, Myanmar',
             period: 'Feb 2023 – Dec 2024',
-            description: 'Owned client-side modular architectures and frontend system integrations for high-performance applications.',
+            description:
+                'Owned client-side modular architectures and frontend system integrations for high-performance applications.',
             highlights: [
                 'Engineered key LMS elements, including an automated exam evaluation engine and dynamic PDF certificate generation.',
                 'Built fully responsive layouts and order workflows for an online bookstore.',
-                'Packaged an e-commerce dashboard as a cross-platform desktop tool using Electron.js with Excel reporting.'
-            ]
-        }
+                'Packaged an e-commerce dashboard as a cross-platform desktop tool using Electron.js with Excel reporting.',
+            ],
+        },
     ],
     ja: [
         {
@@ -313,38 +333,41 @@ export const experienceData = {
             role: 'ITプログラマー',
             location: '東京 / ヤンゴン',
             period: '2025年1月 ～ 2026年2月',
-            description: 'クライアント企業向けシステム開発ポータルサイトの構築・移行、およびテスト設計とコーディングを担当。',
+            description:
+                'クライアント企業向けシステム開発ポータルサイトの構築・移行、およびテスト設計とコーディングを担当。',
             highlights: [
                 'Java、Bootstrapを用い、日本企業向けの保険関連ポータルサイト（4サイト以上）のモダン化を担当。',
                 '詳細な単体・結合テストプロセスを設計・実施し、日本の厳しいエンタープライズ品質基準を満たしました。',
-                '日本チームとの直接的な連携を通じ、日本のビジネスマナーや開発フローに適応して業務を進めました。'
-            ]
+                '日本チームとの直接的な連携を通じ、日本のビジネスマナーや開発フローに適応して業務を進めました。',
+            ],
         },
         {
             company: 'GIC日本／AOTS実務研修プログラム',
             role: '実務研修生プログラマー',
             location: '日本・宮崎県',
             period: '2025年 (4ヶ月間)',
-            description: 'システムモダナイゼーションに焦点を当てた、日本現地での集中実務研修生に選抜。',
+            description:
+                'システムモダナイゼーションに焦点を当てた、日本現地での集中実務研修生に選抜。',
             highlights: [
                 'COBOLやRPGといったレガシープログラムから、モダンなWebシステムへの移行プロセスを習得。',
                 'AWSによるクラウド基盤設計の基礎、およびGeneXusを用いたローコードでの高速開発手法を学習。',
-                '日本の現場におけるプロジェクト管理、チームコラボレーション、専門的なプロセスを実践しました。'
-            ]
+                '日本の現場におけるプロジェクト管理、チームコラボレーション、専門的なプロセスを実践しました。',
+            ],
         },
         {
             company: 'Digital Base IT Company',
             role: 'React開発エンジニア',
             location: 'ヤンゴン、ミャンマー',
             period: '2023年2月 ～ 2024年12月',
-            description: '専任フロントエンドデベロッパーとして、システム基本設計・API連携・ステート管理等を担当。',
+            description:
+                '専任フロントエンドデベロッパーとして、システム基本設計・API連携・ステート管理等を担当。',
             highlights: [
                 '学習管理システム(LMS)において、テスト自動評価エンジンと動的なPDF修了証書生成機能を開発。',
                 'オンライン書店のカート設計、チェックアウトフローおよびレスポンシブデザインの実装。',
-                'Electron、Chart.js、Excel出力モジュールを用い、店舗オーナー向け店舗管理ダッシュボードアプリをパッケージ開発。'
-            ]
-        }
-    ]
+                'Electron、Chart.js、Excel出力モジュールを用い、店舗オーナー向け店舗管理ダッシュボードアプリをパッケージ開発。',
+            ],
+        },
+    ],
 };
 
 export const contactData = {
@@ -356,18 +379,48 @@ export const contactData = {
         intro: "I'm always open to discussing new opportunities, creative ideas, or just having a friendly chat.",
         availableBadge: 'Available for Work',
         details: [
-            { icon: 'fas fa-envelope', label: 'Email', value: 'heroglasses155@gmail.com', href: 'mailto:heroglasses155@gmail.com' },
-            { icon: 'fas fa-phone-alt', label: 'Phone', value: '+95 9454041324', href: 'tel:+959454041324' },
-            { icon: 'fas fa-map-marker-alt', label: 'Location', value: 'Hlaing, Yangon', href: null },
+            {
+                icon: 'fas fa-envelope',
+                label: 'Email',
+                value: 'heroglasses155@gmail.com',
+                href: 'mailto:heroglasses155@gmail.com',
+            },
+            {
+                icon: 'fas fa-phone-alt',
+                label: 'Phone',
+                value: '+95 9454041324',
+                href: 'tel:+959454041324',
+            },
+            {
+                icon: 'fas fa-map-marker-alt',
+                label: 'Location',
+                value: 'Hlaing, Yangon',
+                href: null,
+            },
         ],
     },
     ja: {
         intro: '新しい機会やクリエイティブなアイデアについて、お気軽にご連絡ください。',
         availableBadge: 'お仕事募集中',
         details: [
-            { icon: 'fas fa-envelope', label: 'メール', value: 'heroglasses155@gmail.com', href: 'mailto:heroglasses155@gmail.com' },
-            { icon: 'fas fa-phone-alt', label: '電話', value: '+95 9454041324', href: 'tel:+959454041324' },
-            { icon: 'fas fa-map-marker-alt', label: '所在地', value: 'ヤンゴン、ミャンマー', href: null },
+            {
+                icon: 'fas fa-envelope',
+                label: 'メール',
+                value: 'heroglasses155@gmail.com',
+                href: 'mailto:heroglasses155@gmail.com',
+            },
+            {
+                icon: 'fas fa-phone-alt',
+                label: '電話',
+                value: '+95 9454041324',
+                href: 'tel:+959454041324',
+            },
+            {
+                icon: 'fas fa-map-marker-alt',
+                label: '所在地',
+                value: 'ヤンゴン、ミャンマー',
+                href: null,
+            },
         ],
     },
 };
@@ -376,7 +429,11 @@ export const footerData = {
     brand: 'Portfolio',
     socials: [
         { href: 'https://github.com/ashein-codethedreams', icon: 'fab fa-github', label: 'GitHub' },
-        { href: 'https://www.linkedin.com/in/aye-myat-mon-7a9b65214/', icon: 'fab fa-linkedin-in', label: 'LinkedIn' },
+        {
+            href: 'https://www.linkedin.com/in/aye-myat-mon-7a9b65214/',
+            icon: 'fab fa-linkedin-in',
+            label: 'LinkedIn',
+        },
         { href: 'mailto:heroglasses155@gmail.com', icon: 'fas fa-envelope', label: 'Email' },
     ],
     en: {
@@ -413,69 +470,77 @@ export const projects = {
     en: [
         {
             title: 'Learning Management System (LMS)',
-            description: 'A comprehensive platform for course, user, and content management, featuring a dedicated admin portal, automated exam evaluation, and dynamic certification issuance.',
+            description:
+                'A comprehensive platform for course, user, and content management, featuring a dedicated admin portal, automated exam evaluation, and dynamic certification issuance.',
             tags: ['React', 'Next.js', 'Redux', 'REST API'],
             github: '#',
             live: '#',
-            icon: 'fas fa-graduation-cap'
+            icon: 'fas fa-graduation-cap',
         },
         {
             title: 'Online Book Shop',
-            description: 'A fully responsive online bookstore with an interactive catalog, search system, shopping cart manager, and integrated order handling.',
+            description:
+                'A fully responsive online bookstore with an interactive catalog, search system, shopping cart manager, and integrated order handling.',
             tags: ['React', 'CSS Modules', 'Responsive Layout'],
             github: '#',
             live: '#',
-            icon: 'fas fa-book'
+            icon: 'fas fa-book',
         },
         {
             title: 'HR Administration System',
-            description: 'Internal enterprise portal for employee and department organization, automated payroll calculation, and interactive event calendar module.',
+            description:
+                'Internal enterprise portal for employee and department organization, automated payroll calculation, and interactive event calendar module.',
             tags: ['React', 'Next.js', 'State Management'],
             github: '#',
             live: '#',
-            icon: 'fas fa-users-cog'
+            icon: 'fas fa-users-cog',
         },
         {
             title: 'E-commerce Admin Portal',
-            description: 'A packaged cross-platform desktop management application featuring bulk processing tools, analytical charts, and automated Excel reporting systems.',
+            description:
+                'A packaged cross-platform desktop management application featuring bulk processing tools, analytical charts, and automated Excel reporting systems.',
             tags: ['Electron.js', 'React', 'Chart.js', 'Excel Export'],
             github: '#',
             live: '#',
-            icon: 'fas fa-store'
-        }
+            icon: 'fas fa-store',
+        },
     ],
     ja: [
         {
             title: '学習管理システム (LMS)',
-            description: 'コース・ユーザー・教材コンテンツ管理を統合した学習プラットフォーム。専用管理者ポータル、テストの自動評価システム、証明書の動的PDF生成機能を実装。',
+            description:
+                'コース・ユーザー・教材コンテンツ管理を統合した学習プラットフォーム。専用管理者ポータル、テストの自動評価システム、証明書の動的PDF生成機能を実装。',
             tags: ['React', 'Next.js', 'Redux', 'REST API'],
             github: '#',
             live: '#',
-            icon: 'fas fa-graduation-cap'
+            icon: 'fas fa-graduation-cap',
         },
         {
             title: 'オンライン書店',
-            description: 'インタラクティブな書籍検索、カート管理、注文処理フローを実装した、完全モバイルレスポンシブ対応のオンライン書店ECサイト。',
+            description:
+                'インタラクティブな書籍検索、カート管理、注文処理フローを実装した、完全モバイルレスポンシブ対応のオンライン書店ECサイト。',
             tags: ['React', 'CSS Modules', 'モバイルレスポンシブ'],
             github: '#',
             live: '#',
-            icon: 'fas fa-book'
+            icon: 'fas fa-book',
         },
         {
             title: '人事労務管理システム',
-            description: '社員・部署等の組織データ管理、月次給与計算の自動化、社内アナウンス・カレンダー表示を統合した社内向け管理ポータルサイト。',
+            description:
+                '社員・部署等の組織データ管理、月次給与計算の自動化、社内アナウンス・カレンダー表示を統合した社内向け管理ポータルサイト。',
             tags: ['React', 'Next.js', 'ステート管理'],
             github: '#',
             live: '#',
-            icon: 'fas fa-users-cog'
+            icon: 'fas fa-users-cog',
         },
         {
             title: 'Eコマースデスクトップ管理ツール',
-            description: 'Electronを用いてデスクトップアプリ化された店舗用管理ポータル。大量データの一括バッチ処理、売上チャート、Excel出力によるレポート機能を搭載。',
+            description:
+                'Electronを用いてデスクトップアプリ化された店舗用管理ポータル。大量データの一括バッチ処理、売上チャート、Excel出力によるレポート機能を搭載。',
             tags: ['Electron.js', 'React', 'Chart.js', 'Excel出力'],
             github: '#',
             live: '#',
-            icon: 'fas fa-store'
-        }
-    ]
+            icon: 'fas fa-store',
+        },
+    ],
 };

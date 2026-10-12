@@ -23,7 +23,9 @@ export default function Navbar() {
 
     useEffect(() => {
         document.body.style.overflow = menuOpen ? 'hidden' : '';
-        return () => { document.body.style.overflow = ''; };
+        return () => {
+            document.body.style.overflow = '';
+        };
     }, [menuOpen]);
 
     useEffect(() => {
@@ -63,7 +65,10 @@ export default function Navbar() {
                     <span className="logo-gradient">Portfolio</span>
                 </a>
 
-                <ul className={`${styles.navMenu} ${menuOpen ? styles.active : ''}`}>
+                <ul
+                    id="primary-navigation"
+                    className={`${styles.navMenu} ${menuOpen ? styles.active : ''}`}
+                >
                     {links.map((link) => (
                         <li key={link.href}>
                             <a
@@ -80,7 +85,11 @@ export default function Navbar() {
                 <div className={styles.navActions}>
                     {/* Language toggle pill */}
                     {langMounted && (
-                        <div className={styles.langToggle} aria-label="Switch language">
+                        <div
+                            className={styles.langToggle}
+                            role="group"
+                            aria-label="Switch language"
+                        >
                             <button
                                 className={`${styles.langSegment} ${!isJa ? styles.active : ''}`}
                                 onClick={() => isJa && toggleLang()}
@@ -119,6 +128,8 @@ export default function Navbar() {
                         className={`${styles.hamburger} ${menuOpen ? styles.hamburgerActive : ''}`}
                         onClick={toggleMenu}
                         aria-label="Toggle navigation menu"
+                        aria-expanded={menuOpen}
+                        aria-controls="primary-navigation"
                     >
                         <span className={styles.bar}></span>
                         <span className={styles.bar}></span>

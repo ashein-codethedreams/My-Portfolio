@@ -15,10 +15,15 @@ export function LanguageProvider({ children }) {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        const saved = localStorage.getItem(STORAGE_KEY) ?? 'ja';
-        setLang(saved);
-        document.documentElement.setAttribute('data-lang', saved);
-        setMounted(true);
+        const frame = window.requestAnimationFrame(() => {
+            const saved = localStorage.getItem(STORAGE_KEY) ?? 'ja';
+            setLang(saved);
+            document.documentElement.setAttribute('data-lang', saved);
+            document.documentElement.lang = saved;
+            setMounted(true);
+        });
+
+        return () => window.cancelAnimationFrame(frame);
     }, []);
 
     const toggleLang = useCallback(() => {
@@ -26,6 +31,7 @@ export function LanguageProvider({ children }) {
             const next = prev === 'en' ? 'ja' : 'en';
             localStorage.setItem(STORAGE_KEY, next);
             document.documentElement.setAttribute('data-lang', next);
+            document.documentElement.lang = next;
             return next;
         });
     }, []);

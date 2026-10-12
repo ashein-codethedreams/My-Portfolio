@@ -21,7 +21,8 @@ export const metadata = {
         'Portfolio of エーミャッモン, a passionate Frontend Software Developer specializing in React, Next.js, and modern web technologies.',
     openGraph: {
         title: 'エーミャッモン | Frontend Software Developer - Portfolio',
-        description: 'Explore the portfolio of エーミャッモン, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes.',
+        description:
+            'Explore the portfolio of エーミャッモン, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes.',
         type: 'website',
         locale: 'en_US',
         images: [
@@ -30,15 +31,19 @@ export const metadata = {
                 width: 1200,
                 height: 630,
                 alt: 'エーミャッモン | Frontend Software Developer Portfolio',
-            }
-        ]
+            },
+        ],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'エーミャッモン | Frontend Software Developer - Portfolio',
-        description: 'Explore the portfolio of エーミャッモン, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes.',
+        description:
+            'Explore the portfolio of エーミャッモン, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes.',
         images: ['https://portfolio.enttnine.online/og-image.png'],
-    }
+    },
+    icons: {
+        icon: '/icon.png',
+    },
 };
 
 export default function RootLayout({ children }) {
@@ -47,33 +52,16 @@ export default function RootLayout({ children }) {
             <head>
                 <script
                     dangerouslySetInnerHTML={{
-                        __html: `(function(){try{var t=localStorage.getItem('portfolio-theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('portfolio-lang')||'ja';document.documentElement.setAttribute('data-lang',l);}catch(e){}})();`,
+                        __html: `(function(){try{var t=localStorage.getItem('portfolio-theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('portfolio-lang')||'ja';document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l;}catch(e){}})();`,
                     }}
                 />
-                
-                <link rel="icon" type="image/png" href="/icon.png" />
-                
-                <meta property="og:title" content="エーミャッモン | Frontend Software Developer - Portfolio" />
-                <meta property="og:description" content="Explore the portfolio of エーミャッモン, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes." />
-                <meta property="og:image" content="https://portfolio.enttnine.online/og-image.png" />
-                <meta property="og:image:width" content="1200" />
-                <meta property="og:image:height" content="630" />
-                <meta property="og:type" content="website" />
-                
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="エーミャッモン | Frontend Software Developer - Portfolio" />
-                <meta name="twitter:description" content="Explore the portfolio of エーミャッモン, featuring an interactive macOS IDE coding mockup, vertical experience timelines, and printable A4 resumes." />
-                <meta name="twitter:image" content="https://portfolio.enttnine.online/og-image.png" />
-
                 <link
                     rel="stylesheet"
                     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 />
             </head>
             <body className={`${inter.variable} ${notoSansJP.variable} ${inter.className}`}>
-                <Providers>
-                    {children}
-                </Providers>
+                <Providers>{children}</Providers>
             </body>
         </html>
     );

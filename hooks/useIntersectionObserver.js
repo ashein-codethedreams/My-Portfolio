@@ -24,7 +24,7 @@ export function useIntersectionObserver(options = {}) {
             {
                 threshold: options.threshold || 0.1,
                 rootMargin: options.rootMargin || '0px 0px -50px 0px',
-            }
+            },
         );
 
         observer.observe(element);
@@ -49,7 +49,7 @@ export function useActiveSection(sectionIds) {
             {
                 rootMargin: '-40% 0px -60% 0px',
                 threshold: 0,
-            }
+            },
         );
 
         sectionIds.forEach((id) => {

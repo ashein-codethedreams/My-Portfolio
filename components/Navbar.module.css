@@ -7,10 +7,13 @@
     z-index: 1000;
     background: var(--bg-primary);
     border-bottom: 1px solid var(--border-color);
-    transition: all var(--transition-base), background var(--transition-theme), border-color var(--transition-theme);
+    transition:
+        all var(--transition-base),
+        background var(--transition-theme),
+        border-color var(--transition-theme);
 }
 
-[data-theme="dark"] .navbar {
+[data-theme='dark'] .navbar {
     background: rgba(11, 17, 26, 0.94);
 }
 
@@ -76,7 +79,10 @@
     cursor: pointer;
     color: var(--text-heading);
     font-size: 1rem;
-    transition: all var(--transition-base), background var(--transition-theme), border-color var(--transition-theme);
+    transition:
+        all var(--transition-base),
+        background var(--transition-theme),
+        border-color var(--transition-theme);
     flex-shrink: 0;
 }
 
@@ -114,7 +120,9 @@
     overflow: hidden;
     cursor: pointer;
     flex-shrink: 0;
-    transition: border-color var(--transition-theme), background var(--transition-theme);
+    transition:
+        border-color var(--transition-theme),
+        background var(--transition-theme);
 }
 
 .langSegment {
@@ -181,7 +189,9 @@
         padding: 100px 32px 40px;
         box-shadow: var(--shadow-lg);
         transform: translateX(100%);
-        transition: transform var(--transition-base), background var(--transition-theme);
+        transition:
+            transform var(--transition-base),
+            background var(--transition-theme);
         gap: 4px;
     }
 

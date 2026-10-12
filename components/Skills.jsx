@@ -22,7 +22,7 @@ export default function Skills() {
                     observer.disconnect();
                 }
             },
-            { threshold: 0.3 }
+            { threshold: 0.3 },
         );
 
         if (sectionRef.current) observer.observe(sectionRef.current);
@@ -44,7 +44,9 @@ export default function Skills() {
                                     <div key={skill.name} className={styles.skillItem}>
                                         <div className={styles.skillInfo}>
                                             <span className={styles.skillName}>{skill.name}</span>
-                                            <span className={styles.skillPercent}>{skill.percent}%</span>
+                                            <span className={styles.skillPercent}>
+                                                {skill.percent}%
+                                            </span>
                                         </div>
                                         <div className={styles.skillBar}>
                                             <div

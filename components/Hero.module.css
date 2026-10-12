@@ -18,17 +18,26 @@
     right: 0;
     bottom: 0;
     pointer-events: none;
-    background: radial-gradient(600px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(108, 99, 255, 0.04) 0%, transparent 70%);
+    background: radial-gradient(
+        600px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+        rgba(108, 99, 255, 0.04) 0%,
+        transparent 70%
+    );
     z-index: 0;
     transition: background 0.1s ease;
 }
 
-[data-theme="dark"] .spotlight {
-    background: radial-gradient(800px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(97, 218, 251, 0.05) 0%, rgba(108, 99, 255, 0.03) 40%, transparent 70%);
+[data-theme='dark'] .spotlight {
+    background: radial-gradient(
+        800px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+        rgba(97, 218, 251, 0.05) 0%,
+        rgba(108, 99, 255, 0.03) 40%,
+        transparent 70%
+    );
 }
 
-[data-theme="dark"] .hero {
-    background: linear-gradient(135deg, #0B1120 0%, #0E1628 50%, #0D1835 100%);
+[data-theme='dark'] .hero {
+    background: linear-gradient(135deg, #0b1120 0%, #0e1628 50%, #0d1835 100%);
 }
 
 .hero::before {
@@ -38,7 +47,12 @@
     right: -30%;
     width: 800px;
     height: 800px;
-    background: linear-gradient(135deg, transparent 48%, rgba(157, 202, 120, 0.08) 49%, transparent 50%);
+    background: linear-gradient(
+        135deg,
+        transparent 48%,
+        rgba(157, 202, 120, 0.08) 49%,
+        transparent 50%
+    );
     opacity: 0.6;
 }
 
@@ -161,7 +175,9 @@
     box-shadow: var(--shadow-sm);
     color: var(--text-heading);
     font-size: 1.1rem;
-    transition: all var(--transition-base), background var(--transition-theme);
+    transition:
+        all var(--transition-base),
+        background var(--transition-theme);
 }
 
 .socialLink:hover {
@@ -192,7 +208,7 @@
     border-radius: var(--radius-lg);
 }
 
-[data-theme="dark"] .heroImageWrapper {
+[data-theme='dark'] .heroImageWrapper {
     border-radius: var(--radius-lg);
     overflow: hidden;
 }

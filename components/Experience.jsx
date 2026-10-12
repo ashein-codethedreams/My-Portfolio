@@ -10,8 +10,8 @@ function ExperienceCard({ item }) {
     const [ref, isVisible] = useIntersectionObserver({ threshold: 0.15 });
 
     return (
-        <div 
-            ref={ref} 
+        <div
+            ref={ref}
             className={`${styles.timelineItem} ${isVisible ? 'reveal revealed' : 'reveal'}`}
         >
             <div className={styles.timelinePoint}></div>
@@ -50,7 +50,7 @@ export default function Experience() {
         <section className="section" id="experience">
             <div className="container">
                 <SectionHeader subtitle={header.subtitle} title={header.title} />
-                
+
                 {/* Stats Summary row */}
                 <div className={styles.experienceStatsRow}>
                     {stats.map((stat) => (

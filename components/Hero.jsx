@@ -4,17 +4,28 @@ import { useState, useEffect, useRef } from 'react';
 import styles from './Hero.module.css';
 import { heroData } from '@/data/portfolio';
 import { useLanguage } from '@/hooks/useLanguage';
+import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 import CodeMockup from './CodeMockup';
+
+const ROLE_TEXT = {
+    en: ['Frontend Software Developer', 'React & Next.js Specialist', 'Bilingual IT Programmer'],
+    ja: ['フロントエンドエンジニア', 'React・Next.jsスペシャリスト', 'バイリンガルITプログラマー'],
+};
 
 export default function Hero() {
     const [typedText, setTypedText] = useState('');
     const { lang } = useLanguage();
+    const prefersReducedMotion = usePrefersReducedMotion();
     const heroRef = useRef(null);
 
     const t = heroData[lang] ?? heroData.en;
+    const roles = ROLE_TEXT[lang] ?? ROLE_TEXT.en;
+    const displayedRole = prefersReducedMotion ? roles[0] : typedText;
 
     // Spotlight cursor tracking
     useEffect(() => {
+        if (prefersReducedMotion) return undefined;
+
         const handleMouseMove = (e) => {
             if (!heroRef.current) return;
             const rect = heroRef.current.getBoundingClientRect();
@@ -33,14 +44,12 @@ export default function Hero() {
                 heroElement.removeEventListener('mousemove', handleMouseMove);
             }
         };
-    }, []);
+    }, [prefersReducedMotion]);
 
     // Typewriter effect
     useEffect(() => {
-        const roles = lang === 'ja'
-            ? ["フロントエンドエンジニア", "React・Next.jsスペシャリスト", "バイリンガルITプログラマー"]
-            : ["Frontend Software Developer", "React & Next.js Specialist", "Bilingual IT Programmer"];
-            
+        if (prefersReducedMotion) return undefined;
+
         let roleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -80,7 +89,7 @@ export default function Hero() {
 
         timer = setTimeout(type, 500);
         return () => clearTimeout(timer);
-    }, [lang]);
+    }, [prefersReducedMotion, roles]);
 
     const handleSmoothScroll = (e, href) => {
         e.preventDefault();
@@ -94,20 +103,22 @@ export default function Hero() {
             <div className={`container ${styles.heroContainer}`}>
                 <div className={styles.heroContent}>
                     <p className={styles.heroEyebrow}>
-                        <span>01</span> {lang === 'ja' ? 'フロントエンド開発' : 'FRONTEND DEVELOPMENT'}
+                        <span>01</span>{' '}
+                        {lang === 'ja' ? 'フロントエンド開発' : 'FRONTEND DEVELOPMENT'}
                     </p>
                     <p className={styles.heroGreeting}>
                         <span className={styles.wave}>👋</span> {t.greeting}
                     </p>
                     <h1 className={styles.heroName}>{heroData.name[lang] ?? heroData.name.en}</h1>
                     <p className={`${styles.heroTitle} ${styles.typing}`}>
-                        <span className={styles.typingText}>{typedText}</span>
+                        <span className={styles.typingText}>{displayedRole}</span>
                         <span className={styles.mobileTitle}>
-                            {lang === 'ja' ? 'フロントエンドエンジニア' : 'Frontend Software Developer'}
+                            {lang === 'ja'
+                                ? 'フロントエンドエンジニア'
+                                : 'Frontend Software Developer'}
                         </span>
                     </p>
-                    <p className={styles.heroDescription}>
-{t.description}</p>
+                    <p className={styles.heroDescription}>{t.description}</p>
                     <div className={styles.heroCta}>
                         <a
                             href="#contact"
@@ -116,10 +127,10 @@ export default function Hero() {
                         >
                             <i className="fas fa-paper-plane"></i> {t.cta.contact}
                         </a>
-                        <a 
-                            href={t.cta.cvFile} 
-                            className="btn btn-outline" 
-                            target="_blank" 
+                        <a
+                            href={t.cta.cvFile}
+                            className="btn btn-outline"
+                            target="_blank"
                             rel="noopener noreferrer"
                         >
                             <i className="far fa-file-alt"></i> {t.cta.cv}
@@ -141,7 +152,9 @@ export default function Hero() {
                     </div>
                     <div className={styles.heroMeta}>
                         <span>{lang === 'ja' ? '現在' : 'STATUS'}</span>
-                        <strong>{lang === 'ja' ? '新しい機会にオープン' : 'OPEN TO OPPORTUNITIES'}</strong>
+                        <strong>
+                            {lang === 'ja' ? '新しい機会にオープン' : 'OPEN TO OPPORTUNITIES'}
+                        </strong>
                     </div>
                 </div>
                 <div className={styles.heroImage}>

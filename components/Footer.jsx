@@ -34,7 +34,10 @@ export default function Footer() {
                         <ul>
                             {t.quickLinks.map((link) => (
                                 <li key={link.href}>
-                                    <a href={link.href} onClick={(e) => handleSmoothScroll(e, link.href)}>
+                                    <a
+                                        href={link.href}
+                                        onClick={(e) => handleSmoothScroll(e, link.href)}
+                                    >
                                         {link.label}
                                     </a>
                                 </li>
@@ -59,7 +62,12 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className={styles.footerBottom}>
-                        <p>{t.copyright(new Date().getFullYear(), heroData.name[lang] ?? heroData.name.en)}</p>
+                    <p>
+                        {t.copyright(
+                            new Date().getFullYear(),
+                            heroData.name[lang] ?? heroData.name.en,
+                        )}
+                    </p>
                 </div>
             </div>
         </footer>
